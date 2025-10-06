@@ -7,5 +7,8 @@
         public DateTime YearPublished { get; set; }
         public string? Genre { get; set; }
 
+        public int AuthorId { get; set; }
+        public Author? Author { get; set; }
+
     }
 }

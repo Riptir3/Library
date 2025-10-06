@@ -11,7 +11,16 @@ namespace Library.DatabaseConfig
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if(!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("ConnectionString");
+                optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Library;Trusted_Connection=True;TrustServerCertificate=True;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Author>()
+                .HasMany(a => a.Books)
+                .WithOne(b => b.Author)
+                .HasForeignKey(b => b.AuthorId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
