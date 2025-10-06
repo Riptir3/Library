@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251006093029_CreateDb")]
+    [Migration("20251006103218_CreateDb")]
     partial class CreateDb
     {
         /// <inheritdoc />
@@ -37,7 +37,6 @@ namespace Library.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -60,7 +59,6 @@ namespace Library.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("YearPublished")

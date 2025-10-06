@@ -1,14 +1,15 @@
-using Library.DatabaseConfig;
-using Library.Models;
-using Library.Repositories;
+using Library.Data;
 
 namespace Library
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly IUnitOfWork _unitOfWork;   
+        public Form1(IUnitOfWork unitOfWork)
         {
             InitializeComponent();
+            _unitOfWork = unitOfWork;
         }
+
     }
 }
