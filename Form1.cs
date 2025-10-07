@@ -1,4 +1,5 @@
 using Library.Data;
+using Library.Models;
 
 namespace Library
 {
@@ -43,5 +44,22 @@ namespace Library
             minLabel.BackColor = Color.FromArgb(35, 44, 65);
             minLabel.ForeColor = Color.White;
         }
+
+        private void authorsBtn_Click(object sender, EventArgs e)
+        {
+            ShowPanel(authorsPanel);
+        }
+
+        private void ShowPanel(Panel showPanel)
+        {
+            var panles = new Panel[] { authorsPanel };
+
+            foreach (var panel in panles)
+            {
+                if (showPanel == panel) panel.Show();
+                else panel.Hide();
+            }
+        }
+
     }
 }

@@ -251,7 +251,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HeaderPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="homeBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -599,6 +599,292 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="detailedSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
+        1wAAAdcBjJIIaAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIWSURBVHhe7Zo9
+        axVRFEVXSAKSImAQ1IBVCgO2UbG0ELGwDykkbTr/gykkRfoYG3ur/AMbSy1E7cQPBCWFEDCJAZNwYQJh
+        c5x3fXPn4x7uglU97pmz4Q3seW+gUCgUCoVCweYK8BT4APwBTjLxsNo57B4yjMVt4KcxPDdDhlsabhRz
+        TsKfuQtc0pB1bBhDcjdkiuajMSB332vIOvaMAbn7S0PW8c0YkLtfNWQdz40BuftMQ9axCOwbQ3I19IIb
+        GnIUa8agXA1ZxmLdGJabTzTU/zABbBtDc/FFlaERk8BLY/jQ3QGmNMy4XABeGRcZqq+BGQ3RlFngrXGx
+        ofkOuKjLp2Ie+GRcdCiGsnNNl07NAvDDuHjfhie+67psWywN7HnhN3BHl2ybu1XD0mW69gi4r8t1xTLw
+        11iqK4+BR7pU1/RZmR/rMn3RR2VuVHFT03VlTlJxU9NVZU5acVPTdmVupeKmJlTmN8byTW214qbmauLK
+        3EnFTU2qytxpxU1N08rcS8VNzT0jWKzhrAs0WKxu0GCxukGDxeoGDRarGzRYrG7QYLG6QYPF6gYNFqsb
+        NFisbtBgsbpBg8XqBg0W42cdkjMabpTh7ZQHOiRnNGCd4QWtmzogdzTkvwy/J17Wwx7QoJZbwLQe9IKG
+        Pe8BsKoHvKGhz3R5v1to8KDb+93iu4TfHPK/O23wEPhSfeVX9MNCoVAo9MQpwe9wF+Hi20QAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="detailedSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 41</value>
+  </data>
+  <data name="detailedSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="detailedSearch.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="detailedSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;detailedSearch.Name" xml:space="preserve">
+    <value>detailedSearch</value>
+  </data>
+  <data name="&gt;&gt;detailedSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;detailedSearch.Parent" xml:space="preserve">
+    <value>authorsPanel</value>
+  </data>
+  <data name="&gt;&gt;detailedSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="exportAuthors.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAn
+        WwAAJ1sB4ns9eAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOTSURBVHhe7ZvL
+        6w5hHMU/LomwUC6xomxcig0bl7IjoghbypqtS8pCdqRYEMpCyeVPsLF0iQWWFJFyy61Qir41U9Pp+46f
+        eb7zPG+/33vqbH7v855z5sw7z8w8Mz8YYYQ+MAlYDmwBdgdyG7AamKKGw4JZwAngNfCnR74HTgNzNUBJ
+        rAReOGH75AdgkwYpgSXVXtGAOfgL2K6BcsKO94dOsJz8CWzVYLmwywlUgsVKuOWEMZ4EFurgDlDdNhYp
+        4aUT5LoOSoBqG69Wx77+vUgJXpB9OigBqm2srwk87+wlqHkdMAqq3dTfDPxwPjdmOzuocc4CDMVLUFMN
+        mArV9vSLlqCGXsAUqPYg/WIlqNmggF2h2m36/5oYN+gXIqBGbQG74Kujf1AHNdBWwrs+bqDUJLqAZ47+
+        E2C6DmygrQS7iwyFGkQXcNbRr0s41FgrUNrFkn7HaDdtoesJahBdgN1m/3Y8UrhKTVKg4sbIAgznHY8U
+        hl4lqrgxuoBpwB3HpytD86l4uEEFK+Fc0OEQmk/Fww0EK4Az1ST4zfEeC0PzqXi4QSI0W3g+FQ83SIRm
+        C8+n4uEGidBs4flUPNwgEZotPJ+KhxskQrOF5/vuGNgjMQ/25OgYcAXYqx/2BM0WXoCuCn8E5uggYCpw
+        X8ZeqJ4r9And+PAC7PbSSvgMPALW64AKG50gxos9l6B+4QWMFbYYoUFqXgYm6xeCoF7FCvAOgSb7+iWo
+        T7ECDPOBp06gmn38EtSjaAGG3CWofvECDDlLUO3WAmZX52l7tnezZ951gjUZNSeo7sACbJJ64AwuySMa
+        sgNU0+gWYOdvHViabzVkB6im0S1gnTOwNN9oyA5QTaNbgB0C95zBJXlYQ3aAahrdAgx2s3J0ok6CObFg
+        WE+DOZBz4w2qX7SA3BtvUI9iBUz4m6FB6wHGPvZ8DfUKL2AecBv4AjxueQlh0HpAX3u+hvqFF2Ab3xT/
+        1LIkptcZ42JJ7H8XRe0641J0iBZotvACVDzcIBGaLTyfiocbJEKzhefz3sWJfFU2BXbIaTbjDh2YAu9l
+        6Rs6qBD2ONmMa3RgCuzGRg2Mp4BFOjgTbM/bxnv/xWKT9gz9Qgp2OibDzGu6Aamw83jbJe4w0d4WXaob
+        EIHF1VuYajhsPKDBI2Hv7jx3TIeBtuf3a+A+MBM4DrxyQpSgTXh2zPfys2+DzQvLqlfY7aIjN+08vzZ6
+        th9hPOIvjbzYtmRNwJ8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="exportAuthors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>889, 30</value>
+  </data>
+  <data name="exportAuthors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 50</value>
+  </data>
+  <data name="exportAuthors.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="exportAuthors.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;exportAuthors.Name" xml:space="preserve">
+    <value>exportAuthors</value>
+  </data>
+  <data name="&gt;&gt;exportAuthors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportAuthors.Parent" xml:space="preserve">
+    <value>authorsPanel</value>
+  </data>
+  <data name="&gt;&gt;exportAuthors.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="addAuthor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
+        1wAAAdcBjJIIaAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARnSURBVHhe7ZrJ
+        605RGMe/yJRhITJFGUuGQpGhFMrKQpkVKymKP8BCKCJLmS2UbMjGwkIylDFkWKAsZFgYQuYp9K3z1u3b
+        ec8dzjnvPfq93/rU7b3nnOc590zPfd4LtNVWq9QXwAoAhwHcBPAawE8Dr/nbIQDLAfTRyv+zxgI4CuAL
+        gL8FYdkjAMZoY/+TegLYA+CXpYNF4ezYDaCHNp66OHIPLB2qyjUAg9VIqpps1rR2wpfnACapsdTEkY/R
+        +QZ8CIPUaCriOr1rcTo0t8z+kpy44amzsdiqxusWjzqf3b4sn1JbCjzn1cnY7FMn6hIjvDJBTig+pxIx
+        MrxV51rFMnWmDjG2V8daxUF1pg7xJUYdaxWMEGvXG4tjreKVOlOHflgcaxXf1Zk61OEfQIdfAh1+E2Qa
+        Sx1rFQfUmTrEHJ461iqWqDN1qLcJS9W52NAmbSchJjDVwdhw6SUjZoKYwFQnY8Gjd6Q6UbeYvVVHY7FT
+        jacgpsR4LKmzobkKoLsaT0XM0jyzOB2KlwCGqtHUxNQ1s7fqvC98sBPVWKoaAOCSpRNV4bRPKgeoGq4/
+        mHXK7K1PjMDdfkfKa34+gBvG0UV604gjxwRmmQfBssz2JHfUNTQMwHlxmnHARi2YEaM25vAYv183b3J8
+        cITX/G0/gKUpRXg2LQbwzjJqDU4CGKiVPDUFwDYAFwA8NDPkq9lsuddwmczWSjFEJ7TDNt4C2OT5t3Yn
+        87Lz2NJ+Mx4BWAOgszbmKzpT5a8vnttbzJIpI659n6CKOYrR2qiPGHqqkTL8AXAbwC4zqhMA9FcjRnMC
+        ZZneA1igjVfRQtMBNeDLRTOzsmLnQ+YYv5mTqrJGAfhgadiX3wDGiS1O+xAjr3w0/aiks5YGQ3BC7HAm
+        +Kz5PNh2F7GZq3mWhkIxQ2zx7NcyoVklNp3iiNy3NBKCJ7L2ec3jS8s145SJLgmv9X4zaEP3nKbiZqQN
+        hGKv2GKQo2VcDMnU5bXedzE9U9epY5bKoVgptooGVw1Uet9FoUxSr8gfPOinbgxvtYwLld53cU4r2zTX
+        UjEk/cReXqjLdV7kI0kuh9OW+lkYmeZqs6ViSLqKPZ7TWiZLmURI3p7Aj6tydcZSMSQ6A/hWp2WyhHwA
+        tJWre5aKIRkh9vLyhyGXwFOtZFOeQ75MFXt8J9AyLlR63wU33FzlTUlf1oo9JjO0jAuV3nfBIzdXWik0
+        x8UeMzlaxoVPIDQzU7eptFJoXoi9sqEw1zk7XmTNZ2FoXygU1ooxmCU2V1vKhIY2CkkrxkBfh5nDi/mp
+        zeWio0/lBSYhsCVEmMNjGkvL+sIMNr9mLyzm57WRGDAu11FhDo9pLC1bFabXGNqX0gZLQ7FYp8ZNDi/E
+        LOTIl+481Q3AHUuDMeBo297RmcPzmYlc86WmvYpHDNPY2nAMmAgdrw6YHB7TWGWOSB513O11aVUSZ8J6
+        AFcCTUkX/CepWZDCzkwzyQzuG3yl5fTm7GFsz/B2u6N+W2059A8WZbo5/Vh/cAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="addAuthor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>835, 30</value>
+  </data>
+  <data name="addAuthor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 50</value>
+  </data>
+  <data name="addAuthor.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="addAuthor.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;addAuthor.Name" xml:space="preserve">
+    <value>addAuthor</value>
+  </data>
+  <data name="&gt;&gt;addAuthor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addAuthor.Parent" xml:space="preserve">
+    <value>authorsPanel</value>
+  </data>
+  <data name="&gt;&gt;addAuthor.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 23</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
+    <value>textBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 23</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 57</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>authorsPanel</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AuthorName.HeaderText" xml:space="preserve">
+    <value>Author Name</value>
+  </data>
+  <data name="AuthorName.Width" type="System.Int32, mscorlib">
+    <value>104</value>
+  </data>
+  <metadata name="Date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Date.HeaderText" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <metadata name="Books.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Books.HeaderText" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <metadata name="ChangeBtn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ChangeBtn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChangeBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        gwAAAIMBYu+7WgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFOSURBVEhL3ZWx
+        K0VhGMZ/Eimb1WaSv0PsFgalFIPBIEJ3UhZKMjFLFkUxSRZlMxlsMiiLKJLBgJ7b+9bxuuc63zl38quv
+        bs/33Oe5X+f9zoXiTABPwCswFzerMgN8AvvANvAFrERTWaYsfAdoM23BStaCN5lG4U7lkmbhTumSIuFO
+        cklKuFO4pEy482dJlXAnt6QV4c6vknEL32pBuFOzkvqNvwUOWxju6Ma/6MMNcAEMAf3RVYI+YBA4AR4l
+        DFuTjvQOtMdvJHKfyRpzsQtYtI3On/5knoF1oDtuTOYU6Nnozflg+1o6+ibQEbxCBctRFHkF+h/QlG0A
+        07ZWgQ9gPnhFcsEucBk0cQScRrFMwQFwFjSxZ9MX+ccFo1bQE/SUAk2V5n826HV6gTfg3O6Er+smBXfB
+        e2zTNRDNjq74lR0zuzSikaUGPv2YkazpG6lxelHIFZ2gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="delBtn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="delBtn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="delBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
+        1wAAAdcBjJIIaAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIWSURBVHhe7Zo9
+        axVRFEVXSAKSImAQ1IBVCgO2UbG0ELGwDykkbTr/gykkRfoYG3ur/AMbSy1E7cQPBCWFEDCJAZNwYQJh
+        c5x3fXPn4x7uglU97pmz4Q3seW+gUCgUCoVCweYK8BT4APwBTjLxsNo57B4yjMVt4KcxPDdDhlsabhRz
+        TsKfuQtc0pB1bBhDcjdkiuajMSB332vIOvaMAbn7S0PW8c0YkLtfNWQdz40BuftMQ9axCOwbQ3I19IIb
+        GnIUa8agXA1ZxmLdGJabTzTU/zABbBtDc/FFlaERk8BLY/jQ3QGmNMy4XABeGRcZqq+BGQ3RlFngrXGx
+        ofkOuKjLp2Ie+GRcdCiGsnNNl07NAvDDuHjfhie+67psWywN7HnhN3BHl2ybu1XD0mW69gi4r8t1xTLw
+        11iqK4+BR7pU1/RZmR/rMn3RR2VuVHFT03VlTlJxU9NVZU5acVPTdmVupeKmJlTmN8byTW214qbmauLK
+        3EnFTU2qytxpxU1N08rcS8VNzT0jWKzhrAs0WKxu0GCxukGDxeoGDRarGzRYrG7QYLG6QYPF6gYNFqsb
+        NFisbtBgsbpBg8XqBg0W42cdkjMabpTh7ZQHOiRnNGCd4QWtmzogdzTkvwy/J17Wwx7QoJZbwLQe9IKG
+        Pe8BsKoHvKGhz3R5v1to8KDb+93iu4TfHPK/O23wEPhSfeVX9MNCoVAo9MQpwe9wF+Hi20QAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 94</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>892, 522</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>authorsPanel</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="authorsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="authorsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 46</value>
+  </data>
+  <data name="authorsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>977, 640</value>
+  </data>
+  <data name="authorsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="authorsPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;authorsPanel.Name" xml:space="preserve">
+    <value>authorsPanel</value>
+  </data>
+  <data name="&gt;&gt;authorsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;authorsPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;authorsPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -615,6 +901,36 @@
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;AuthorName.Name" xml:space="preserve">
+    <value>AuthorName</value>
+  </data>
+  <data name="&gt;&gt;AuthorName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Date.Name" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="&gt;&gt;Date.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Books.Name" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <data name="&gt;&gt;Books.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChangeBtn.Name" xml:space="preserve">
+    <value>ChangeBtn</value>
+  </data>
+  <data name="&gt;&gt;ChangeBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;delBtn.Name" xml:space="preserve">
+    <value>delBtn</value>
+  </data>
+  <data name="&gt;&gt;delBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

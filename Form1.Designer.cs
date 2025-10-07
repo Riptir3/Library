@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             HeaderPanel = new Panel();
             label1 = new Label();
             exitLabel = new Label();
@@ -38,8 +40,26 @@
             authorsBtn = new Button();
             booksBtn = new Button();
             statBtn = new Button();
+            authorsPanel = new Panel();
+            detailedSearch = new PictureBox();
+            exportAuthors = new PictureBox();
+            addAuthor = new PictureBox();
+            groupBox1 = new GroupBox();
+            textBox1 = new TextBox();
+            dataGridView1 = new DataGridView();
+            AuthorName = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Books = new DataGridViewComboBoxColumn();
+            ChangeBtn = new DataGridViewImageColumn();
+            delBtn = new DataGridViewImageColumn();
             HeaderPanel.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
+            authorsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)detailedSearch).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)exportAuthors).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)addAuthor).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // HeaderPanel
@@ -105,6 +125,7 @@
             authorsBtn.ForeColor = SystemColors.ButtonHighlight;
             authorsBtn.Name = "authorsBtn";
             authorsBtn.UseVisualStyleBackColor = true;
+            authorsBtn.Click += authorsBtn_Click;
             // 
             // booksBtn
             // 
@@ -124,11 +145,103 @@
             statBtn.Name = "statBtn";
             statBtn.UseVisualStyleBackColor = true;
             // 
+            // authorsPanel
+            // 
+            authorsPanel.BackColor = Color.FromArgb(159, 2, 94);
+            authorsPanel.Controls.Add(detailedSearch);
+            authorsPanel.Controls.Add(exportAuthors);
+            authorsPanel.Controls.Add(addAuthor);
+            authorsPanel.Controls.Add(groupBox1);
+            authorsPanel.Controls.Add(dataGridView1);
+            resources.ApplyResources(authorsPanel, "authorsPanel");
+            authorsPanel.Name = "authorsPanel";
+            // 
+            // detailedSearch
+            // 
+            resources.ApplyResources(detailedSearch, "detailedSearch");
+            detailedSearch.Name = "detailedSearch";
+            detailedSearch.TabStop = false;
+            // 
+            // exportAuthors
+            // 
+            resources.ApplyResources(exportAuthors, "exportAuthors");
+            exportAuthors.Name = "exportAuthors";
+            exportAuthors.TabStop = false;
+            // 
+            // addAuthor
+            // 
+            resources.ApplyResources(addAuthor, "addAuthor");
+            addAuthor.Name = "addAuthor";
+            addAuthor.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.ForeColor = SystemColors.ButtonHighlight;
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(textBox1, "textBox1");
+            textBox1.Name = "textBox1";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 192, 128);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { AuthorName, Date, Books, ChangeBtn, delBtn });
+            dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+            resources.ApplyResources(dataGridView1, "dataGridView1");
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.RowTemplate.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView1.ShowEditingIcon = false;
+            // 
+            // AuthorName
+            // 
+            AuthorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            resources.ApplyResources(AuthorName, "AuthorName");
+            AuthorName.Name = "AuthorName";
+            // 
+            // Date
+            // 
+            resources.ApplyResources(Date, "Date");
+            Date.Name = "Date";
+            // 
+            // Books
+            // 
+            resources.ApplyResources(Books, "Books");
+            Books.Name = "Books";
+            // 
+            // ChangeBtn
+            // 
+            resources.ApplyResources(ChangeBtn, "ChangeBtn");
+            ChangeBtn.Image = (Image)resources.GetObject("ChangeBtn.Image");
+            ChangeBtn.Name = "ChangeBtn";
+            ChangeBtn.Resizable = DataGridViewTriState.True;
+            // 
+            // delBtn
+            // 
+            resources.ApplyResources(delBtn, "delBtn");
+            delBtn.Image = (Image)resources.GetObject("delBtn.Image");
+            delBtn.Name = "delBtn";
+            delBtn.Resizable = DataGridViewTriState.True;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            Controls.Add(authorsPanel);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(HeaderPanel);
             FormBorderStyle = FormBorderStyle.None;
@@ -137,6 +250,13 @@
             HeaderPanel.ResumeLayout(false);
             HeaderPanel.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
+            authorsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)detailedSearch).EndInit();
+            ((System.ComponentModel.ISupportInitialize)exportAuthors).EndInit();
+            ((System.ComponentModel.ISupportInitialize)addAuthor).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -151,5 +271,17 @@
         private Label minLabel;
         private Label exitLabel;
         private Label label1;
+        private Panel authorsPanel;
+        private DataGridView dataGridView1;
+        private TextBox textBox1;
+        private GroupBox groupBox1;
+        private PictureBox addAuthor;
+        private PictureBox exportAuthors;
+        private PictureBox detailedSearch;
+        private DataGridViewTextBoxColumn AuthorName;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewComboBoxColumn Books;
+        private DataGridViewImageColumn ChangeBtn;
+        private DataGridViewImageColumn delBtn;
     }
 }
