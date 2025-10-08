@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             HeaderPanel = new Panel();
             label1 = new Label();
             exitLabel = new Label();
@@ -41,25 +45,64 @@
             booksBtn = new Button();
             statBtn = new Button();
             authorsPanel = new Panel();
+            authorEditPanel = new Panel();
+            groupBox7 = new GroupBox();
+            groupBox8 = new GroupBox();
+            authorEditNewDate = new DateTimePicker();
+            groupBox9 = new GroupBox();
+            authorEditNewName = new TextBox();
+            authorEditSave = new Button();
+            authorEditCancel = new Button();
+            groupBox2 = new GroupBox();
+            groupBox5 = new GroupBox();
+            authorEditOriginalDate = new DateTimePicker();
+            groupBox6 = new GroupBox();
+            authorEditOriginalName = new TextBox();
+            panel3 = new Panel();
+            authorEditExit = new Label();
+            addAuthorPanel = new Panel();
+            addAuthorGroupBox = new GroupBox();
+            addAuhtorCancelBtn = new Button();
+            addAuthorSaveBtn = new Button();
+            groupBox4 = new GroupBox();
+            authorBirtDatePicker = new DateTimePicker();
+            groupBox3 = new GroupBox();
+            authorNameTxtbox = new TextBox();
+            panel1 = new Panel();
+            addAuthorsExitLabel = new Label();
             detailedSearch = new PictureBox();
             exportAuthors = new PictureBox();
             addAuthor = new PictureBox();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            authorSearchTxt = new TextBox();
+            authorDataGridView = new DataGridView();
             AuthorName = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
-            Books = new DataGridViewComboBoxColumn();
+            Books = new DataGridViewTextBoxColumn();
             ChangeBtn = new DataGridViewImageColumn();
             delBtn = new DataGridViewImageColumn();
+            showBooks = new DataGridViewImageColumn();
             HeaderPanel.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             authorsPanel.SuspendLayout();
+            authorEditPanel.SuspendLayout();
+            groupBox7.SuspendLayout();
+            groupBox8.SuspendLayout();
+            groupBox9.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox6.SuspendLayout();
+            panel3.SuspendLayout();
+            addAuthorPanel.SuspendLayout();
+            addAuthorGroupBox.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox3.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)detailedSearch).BeginInit();
             ((System.ComponentModel.ISupportInitialize)exportAuthors).BeginInit();
             ((System.ComponentModel.ISupportInitialize)addAuthor).BeginInit();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)authorDataGridView).BeginInit();
             SuspendLayout();
             // 
             // HeaderPanel
@@ -148,13 +191,199 @@
             // authorsPanel
             // 
             authorsPanel.BackColor = Color.FromArgb(159, 2, 94);
+            authorsPanel.Controls.Add(authorEditPanel);
+            authorsPanel.Controls.Add(addAuthorPanel);
             authorsPanel.Controls.Add(detailedSearch);
             authorsPanel.Controls.Add(exportAuthors);
             authorsPanel.Controls.Add(addAuthor);
             authorsPanel.Controls.Add(groupBox1);
-            authorsPanel.Controls.Add(dataGridView1);
+            authorsPanel.Controls.Add(authorDataGridView);
             resources.ApplyResources(authorsPanel, "authorsPanel");
             authorsPanel.Name = "authorsPanel";
+            // 
+            // authorEditPanel
+            // 
+            authorEditPanel.BorderStyle = BorderStyle.FixedSingle;
+            authorEditPanel.Controls.Add(groupBox7);
+            authorEditPanel.Controls.Add(authorEditSave);
+            authorEditPanel.Controls.Add(authorEditCancel);
+            authorEditPanel.Controls.Add(groupBox2);
+            authorEditPanel.Controls.Add(panel3);
+            resources.ApplyResources(authorEditPanel, "authorEditPanel");
+            authorEditPanel.Name = "authorEditPanel";
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(groupBox8);
+            groupBox7.Controls.Add(groupBox9);
+            resources.ApplyResources(groupBox7, "groupBox7");
+            groupBox7.Name = "groupBox7";
+            groupBox7.TabStop = false;
+            // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(authorEditNewDate);
+            resources.ApplyResources(groupBox8, "groupBox8");
+            groupBox8.Name = "groupBox8";
+            groupBox8.TabStop = false;
+            // 
+            // authorEditNewDate
+            // 
+            resources.ApplyResources(authorEditNewDate, "authorEditNewDate");
+            authorEditNewDate.Name = "authorEditNewDate";
+            // 
+            // groupBox9
+            // 
+            groupBox9.Controls.Add(authorEditNewName);
+            resources.ApplyResources(groupBox9, "groupBox9");
+            groupBox9.Name = "groupBox9";
+            groupBox9.TabStop = false;
+            // 
+            // authorEditNewName
+            // 
+            resources.ApplyResources(authorEditNewName, "authorEditNewName");
+            authorEditNewName.Name = "authorEditNewName";
+            // 
+            // authorEditSave
+            // 
+            authorEditSave.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(authorEditSave, "authorEditSave");
+            authorEditSave.ForeColor = SystemColors.ButtonHighlight;
+            authorEditSave.Name = "authorEditSave";
+            authorEditSave.UseVisualStyleBackColor = false;
+            authorEditSave.Click += authorEditSave_Click;
+            // 
+            // authorEditCancel
+            // 
+            authorEditCancel.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(authorEditCancel, "authorEditCancel");
+            authorEditCancel.ForeColor = SystemColors.ButtonFace;
+            authorEditCancel.Name = "authorEditCancel";
+            authorEditCancel.UseVisualStyleBackColor = false;
+            authorEditCancel.Click += authorEditCancel_Click;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(groupBox5);
+            groupBox2.Controls.Add(groupBox6);
+            resources.ApplyResources(groupBox2, "groupBox2");
+            groupBox2.Name = "groupBox2";
+            groupBox2.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(authorEditOriginalDate);
+            resources.ApplyResources(groupBox5, "groupBox5");
+            groupBox5.Name = "groupBox5";
+            groupBox5.TabStop = false;
+            // 
+            // authorEditOriginalDate
+            // 
+            resources.ApplyResources(authorEditOriginalDate, "authorEditOriginalDate");
+            authorEditOriginalDate.Name = "authorEditOriginalDate";
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(authorEditOriginalName);
+            resources.ApplyResources(groupBox6, "groupBox6");
+            groupBox6.Name = "groupBox6";
+            groupBox6.TabStop = false;
+            // 
+            // authorEditOriginalName
+            // 
+            resources.ApplyResources(authorEditOriginalName, "authorEditOriginalName");
+            authorEditOriginalName.Name = "authorEditOriginalName";
+            authorEditOriginalName.ReadOnly = true;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(35, 44, 65);
+            panel3.Controls.Add(authorEditExit);
+            resources.ApplyResources(panel3, "panel3");
+            panel3.Name = "panel3";
+            // 
+            // authorEditExit
+            // 
+            resources.ApplyResources(authorEditExit, "authorEditExit");
+            authorEditExit.Cursor = Cursors.Hand;
+            authorEditExit.ForeColor = SystemColors.ControlLightLight;
+            authorEditExit.Name = "authorEditExit";
+            authorEditExit.Click += authorEditExit_Click;
+            // 
+            // addAuthorPanel
+            // 
+            addAuthorPanel.BorderStyle = BorderStyle.FixedSingle;
+            addAuthorPanel.Controls.Add(addAuthorGroupBox);
+            addAuthorPanel.Controls.Add(panel1);
+            resources.ApplyResources(addAuthorPanel, "addAuthorPanel");
+            addAuthorPanel.Name = "addAuthorPanel";
+            // 
+            // addAuthorGroupBox
+            // 
+            addAuthorGroupBox.Controls.Add(addAuhtorCancelBtn);
+            addAuthorGroupBox.Controls.Add(addAuthorSaveBtn);
+            addAuthorGroupBox.Controls.Add(groupBox4);
+            addAuthorGroupBox.Controls.Add(groupBox3);
+            resources.ApplyResources(addAuthorGroupBox, "addAuthorGroupBox");
+            addAuthorGroupBox.Name = "addAuthorGroupBox";
+            addAuthorGroupBox.TabStop = false;
+            // 
+            // addAuhtorCancelBtn
+            // 
+            addAuhtorCancelBtn.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(addAuhtorCancelBtn, "addAuhtorCancelBtn");
+            addAuhtorCancelBtn.ForeColor = SystemColors.ButtonFace;
+            addAuhtorCancelBtn.Name = "addAuhtorCancelBtn";
+            addAuhtorCancelBtn.UseVisualStyleBackColor = false;
+            addAuhtorCancelBtn.Click += addAuhtorCancelBtn_Click;
+            // 
+            // addAuthorSaveBtn
+            // 
+            addAuthorSaveBtn.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(addAuthorSaveBtn, "addAuthorSaveBtn");
+            addAuthorSaveBtn.ForeColor = SystemColors.ButtonHighlight;
+            addAuthorSaveBtn.Name = "addAuthorSaveBtn";
+            addAuthorSaveBtn.UseVisualStyleBackColor = false;
+            addAuthorSaveBtn.Click += addAuthorSaveBtn_Click;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(authorBirtDatePicker);
+            resources.ApplyResources(groupBox4, "groupBox4");
+            groupBox4.Name = "groupBox4";
+            groupBox4.TabStop = false;
+            // 
+            // authorBirtDatePicker
+            // 
+            resources.ApplyResources(authorBirtDatePicker, "authorBirtDatePicker");
+            authorBirtDatePicker.Name = "authorBirtDatePicker";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(authorNameTxtbox);
+            resources.ApplyResources(groupBox3, "groupBox3");
+            groupBox3.Name = "groupBox3";
+            groupBox3.TabStop = false;
+            // 
+            // authorNameTxtbox
+            // 
+            resources.ApplyResources(authorNameTxtbox, "authorNameTxtbox");
+            authorNameTxtbox.Name = "authorNameTxtbox";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(35, 44, 65);
+            panel1.Controls.Add(addAuthorsExitLabel);
+            resources.ApplyResources(panel1, "panel1");
+            panel1.Name = "panel1";
+            // 
+            // addAuthorsExitLabel
+            // 
+            resources.ApplyResources(addAuthorsExitLabel, "addAuthorsExitLabel");
+            addAuthorsExitLabel.Cursor = Cursors.Hand;
+            addAuthorsExitLabel.ForeColor = SystemColors.ControlLightLight;
+            addAuthorsExitLabel.Name = "addAuthorsExitLabel";
+            addAuthorsExitLabel.Click += addAuthorsExitLabel_Click;
             // 
             // detailedSearch
             // 
@@ -173,60 +402,87 @@
             resources.ApplyResources(addAuthor, "addAuthor");
             addAuthor.Name = "addAuthor";
             addAuthor.TabStop = false;
+            addAuthor.Click += addAuthor_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(authorSearchTxt);
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
             resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
             // 
-            // textBox1
+            // authorSearchTxt
             // 
-            resources.ApplyResources(textBox1, "textBox1");
-            textBox1.Name = "textBox1";
+            resources.ApplyResources(authorSearchTxt, "authorSearchTxt");
+            authorSearchTxt.Name = "authorSearchTxt";
+            authorSearchTxt.TextChanged += authorSearchTxt_TextChanged;
             // 
-            // dataGridView1
+            // authorDataGridView
             // 
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 192, 128);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { AuthorName, Date, Books, ChangeBtn, delBtn });
-            dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
-            resources.ApplyResources(dataGridView1, "dataGridView1");
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.RowTemplate.ReadOnly = true;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dataGridView1.ShowEditingIcon = false;
+            authorDataGridView.AllowUserToAddRows = false;
+            authorDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 192, 128);
+            authorDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            resources.ApplyResources(authorDataGridView, "authorDataGridView");
+            authorDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            authorDataGridView.BackgroundColor = Color.White;
+            authorDataGridView.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            authorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            authorDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            authorDataGridView.Columns.AddRange(new DataGridViewColumn[] { AuthorName, Date, Books, ChangeBtn, delBtn, showBooks });
+            authorDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            authorDataGridView.MultiSelect = false;
+            authorDataGridView.Name = "authorDataGridView";
+            authorDataGridView.ReadOnly = true;
+            authorDataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            authorDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            authorDataGridView.RowTemplate.ReadOnly = true;
+            authorDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            authorDataGridView.ShowEditingIcon = false;
+            authorDataGridView.CellContentClick += authorDataGridView_CellContentClick;
             // 
             // AuthorName
             // 
             AuthorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            AuthorName.DefaultCellStyle = dataGridViewCellStyle9;
             resources.ApplyResources(AuthorName, "AuthorName");
             AuthorName.Name = "AuthorName";
+            AuthorName.ReadOnly = true;
             // 
             // Date
             // 
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Date.DefaultCellStyle = dataGridViewCellStyle10;
             resources.ApplyResources(Date, "Date");
             Date.Name = "Date";
+            Date.ReadOnly = true;
             // 
             // Books
             // 
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Books.DefaultCellStyle = dataGridViewCellStyle11;
             resources.ApplyResources(Books, "Books");
             Books.Name = "Books";
+            Books.ReadOnly = true;
+            Books.Resizable = DataGridViewTriState.True;
+            Books.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // ChangeBtn
             // 
             resources.ApplyResources(ChangeBtn, "ChangeBtn");
             ChangeBtn.Image = (Image)resources.GetObject("ChangeBtn.Image");
             ChangeBtn.Name = "ChangeBtn";
+            ChangeBtn.ReadOnly = true;
             ChangeBtn.Resizable = DataGridViewTriState.True;
             // 
             // delBtn
@@ -234,7 +490,17 @@
             resources.ApplyResources(delBtn, "delBtn");
             delBtn.Image = (Image)resources.GetObject("delBtn.Image");
             delBtn.Name = "delBtn";
+            delBtn.ReadOnly = true;
             delBtn.Resizable = DataGridViewTriState.True;
+            // 
+            // showBooks
+            // 
+            resources.ApplyResources(showBooks, "showBooks");
+            showBooks.Image = (Image)resources.GetObject("showBooks.Image");
+            showBooks.Name = "showBooks";
+            showBooks.ReadOnly = true;
+            showBooks.Resizable = DataGridViewTriState.True;
+            showBooks.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // Form1
             // 
@@ -251,12 +517,30 @@
             HeaderPanel.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             authorsPanel.ResumeLayout(false);
+            authorEditPanel.ResumeLayout(false);
+            groupBox7.ResumeLayout(false);
+            groupBox8.ResumeLayout(false);
+            groupBox9.ResumeLayout(false);
+            groupBox9.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            addAuthorPanel.ResumeLayout(false);
+            addAuthorGroupBox.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)detailedSearch).EndInit();
             ((System.ComponentModel.ISupportInitialize)exportAuthors).EndInit();
             ((System.ComponentModel.ISupportInitialize)addAuthor).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)authorDataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -272,16 +556,42 @@
         private Label exitLabel;
         private Label label1;
         private Panel authorsPanel;
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private DataGridView authorDataGridView;
+        private TextBox authorSearchTxt;
         private GroupBox groupBox1;
         private PictureBox addAuthor;
         private PictureBox exportAuthors;
         private PictureBox detailedSearch;
         private DataGridViewTextBoxColumn AuthorName;
         private DataGridViewTextBoxColumn Date;
-        private DataGridViewComboBoxColumn Books;
+        private DataGridViewTextBoxColumn Books;
         private DataGridViewImageColumn ChangeBtn;
         private DataGridViewImageColumn delBtn;
+        private DataGridViewImageColumn showBooks;
+        private Panel addAuthorPanel;
+        private Panel panel1;
+        private Label addAuthorsExitLabel;
+        private GroupBox addAuthorGroupBox;
+        private GroupBox groupBox3;
+        private TextBox authorNameTxtbox;
+        private Button addAuhtorCancelBtn;
+        private Button addAuthorSaveBtn;
+        private GroupBox groupBox4;
+        private DateTimePicker authorBirtDatePicker;
+        private Panel authorEditPanel;
+        private GroupBox groupBox7;
+        private GroupBox groupBox8;
+        private DateTimePicker authorEditNewDate;
+        private GroupBox groupBox9;
+        private TextBox authorEditNewName;
+        private Button authorEditSave;
+        private Button authorEditCancel;
+        private GroupBox groupBox2;
+        private GroupBox groupBox5;
+        private DateTimePicker authorEditOriginalDate;
+        private GroupBox groupBox6;
+        private TextBox authorEditOriginalName;
+        private Panel panel3;
+        private Label authorEditExit;
     }
 }

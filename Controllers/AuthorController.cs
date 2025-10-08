@@ -25,5 +25,18 @@ namespace Library.Controllers
                 return true;
             }
         }
+        public bool EditAuthor(Author author)
+        {
+            if (_unitOfWork.Authors.GetAll().Any(a => a.Name?.ToLower() == author.Name?.ToLower()))
+            {
+                return false;
+            }
+            else
+            {
+                _unitOfWork.Authors.Update(author);
+                _unitOfWork.Save();
+                return true;
+            }
+        }
     }
 }
