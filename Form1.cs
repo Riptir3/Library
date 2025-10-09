@@ -2,6 +2,7 @@ using Library.Controllers;
 using Library.Data;
 using Library.Enums;
 using Library.Models;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Library
 {
@@ -54,7 +55,7 @@ namespace Library
         }
         private void ShowPanel(Panel showPanel)
         {
-            var panles = new Panel[] { authorsPanel, addAuthorPanel, booksPanel, addBookPanel };
+            var panles = new Panel[] { authorsPanel, addAuthorPanel, booksPanel, addBookPanel, editBookPanel };
 
             foreach (var panel in panles)
             {
@@ -244,7 +245,7 @@ namespace Library
         {
             authorDataGridView.Rows.Clear();
 
-            var searchText = authorSearchTxt.Text;
+            var searchText = authorSearchTxt.Text.ToLower();
 
             if (searchText.Length == 0)
             {
@@ -351,6 +352,148 @@ namespace Library
                 _unitOfWork.Save();
                 LoadBooksData();
                 resetAddBookPanel();
+            }
+        }
+
+        private void updateEditBookPanel(Book book)
+        {
+
+            var authors = _unitOfWork.Authors.GetAll().Select(a => a.Name).ToList();
+
+            editBookAuthorComboBox.DataSource = authors;
+
+            var genres = Enum.GetValues(typeof(Genre)).Cast<Genre>().ToList();
+
+            editBookGenreComboBox.DataSource = genres;
+
+            editBookOriginalTitle.Text = book.Title;
+            editBookOriginalGenre.Text = book.Genre;
+            editBookOriginalAuthor.Text = book.Author.Name;
+
+            editBookGenreComboBox.SelectedText = book.Genre;
+            editBookAuthorComboBox.SelectedText = book.Author.Name;
+
+            editBookPanel.Show();
+        }
+
+        private void deleteBook(Book book)
+        {
+            _unitOfWork.Books.Delete(book);
+            _unitOfWork.Save();
+            LoadBooksData();
+            MessageBox.Show("Book is deleted.");
+        }
+
+        private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var bookTitle = booksDataGridView.CurrentRow.Cells[0].Value as string;
+            var book = _unitOfWork.Books.GetAllWithAuthor().Where(a => a.Title == bookTitle).First();
+
+            switch (e.ColumnIndex)
+            {
+                case 3:
+                    updateEditBookPanel(book);
+                    break;
+                case 4:
+                    deleteBook(book);
+                    break;
+            }
+        }
+
+        private void editBookExitBtn_Click(object sender, EventArgs e)
+        {
+            editBookPanel.Hide();
+        }
+
+        private void editBookCaancelBtn_Click(object sender, EventArgs e)
+        {
+            editBookPanel.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var originalTitle = editBookOriginalTitle.Text;
+            var originalGenre = editBookOriginalGenre.Text;
+            var originalAuthor = editBookOriginalAuthor.Text;
+
+            var newTitle = editBookNewTitle.Text;
+            var newGenre = editBookGenreComboBox.SelectedValue.ToString();
+            var newAuthor = editBookAuthorComboBox.SelectedValue.ToString();
+
+            if (newTitle == string.Empty)
+            {
+                MessageBox.Show("Title can not be nothing.");
+                return;
+            }
+            if (originalTitle == newTitle && originalGenre == newGenre && originalAuthor == newAuthor)
+            {
+                MessageBox.Show("No changes.");
+                return;
+            }
+            if (originalTitle != newTitle)
+            {
+                bool nameIsOK = _unitOfWork.Books.GetAll().Where(b => b.Title == newTitle).ToList().Count == 0;
+                if (nameIsOK)
+                {
+
+                    var Book = _unitOfWork.Books.GetAll().Where(b => b.Title == originalTitle).First();
+                    var author = _unitOfWork.Authors.GetAll().Where(a => a.Name == newAuthor).First();
+
+                    Book.Title = newTitle;
+                    Book.Genre = newGenre;
+                    Book.AuthorId = author.Id;
+
+                    _unitOfWork.Books.Update(Book);
+                    _unitOfWork.Save();
+                    MessageBox.Show("Book is editted.");
+                    editBookPanel.Hide();
+                    LoadBooksData();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Title is reserved.");
+                    return;
+                }
+            }
+            else
+            {
+                var Book = _unitOfWork.Books.GetAll().Where(b => b.Title == originalTitle).First();
+                var author = _unitOfWork.Authors.GetAll().Where(a => a.Name == newAuthor).First();
+
+                Book.Genre = newGenre;
+                Book.AuthorId = author.Id;
+
+                _unitOfWork.Books.Update(Book);
+                _unitOfWork.Save();
+                MessageBox.Show("Book is editted.");
+                editBookPanel.Hide();
+                LoadBooksData();
+                return;
+            }
+        }
+
+        private void booksSearchTxt_TextChanged(object sender, EventArgs e)
+        {
+            booksDataGridView.Rows.Clear();
+
+            var searchText = booksSearchTxt.Text.ToLower();
+
+            if (searchText.Length == 0)
+            {
+                LoadBooksData();
+            }
+            else
+            {
+                var books = _unitOfWork.Books.GetAllWithAuthor().Where(b => b.Title.ToLower().Contains(searchText) || b.Genre.ToLower().Contains(searchText) || b.Author.Name.ToLower().Contains(searchText)).ToList();
+
+                if (books.Any())
+                {
+                    foreach (var book in books)
+                    {
+                        booksDataGridView.Rows.Add(book.Title,book.Genre,book.Author.Name);
+                    }
+                }
             }
         }
     }

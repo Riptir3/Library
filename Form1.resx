@@ -251,7 +251,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HeaderPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="homeBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -599,7 +599,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="authorEditNewDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 25</value>
@@ -1562,7 +1562,7 @@
     <value>6</value>
   </data>
   <data name="authorsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 52</value>
+    <value>169, 10</value>
   </data>
   <data name="authorsPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>977, 640</value>
@@ -1580,10 +1580,514 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;authorsPanel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;authorsPanel.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="editBookAuthorComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="editBookAuthorComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 28</value>
+  </data>
+  <data name="editBookAuthorComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;editBookAuthorComboBox.Name" xml:space="preserve">
+    <value>editBookAuthorComboBox</value>
+  </data>
+  <data name="&gt;&gt;editBookAuthorComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookAuthorComboBox.Parent" xml:space="preserve">
+    <value>groupBox22</value>
+  </data>
+  <data name="&gt;&gt;editBookAuthorComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox22.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="groupBox22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 237</value>
+  </data>
+  <data name="groupBox22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 64</value>
+  </data>
+  <data name="groupBox22.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupBox22.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="&gt;&gt;groupBox22.Name" xml:space="preserve">
+    <value>groupBox22</value>
+  </data>
+  <data name="&gt;&gt;groupBox22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox22.Parent" xml:space="preserve">
+    <value>groupBox14</value>
+  </data>
+  <data name="&gt;&gt;groupBox22.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="editBookGenreComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="editBookGenreComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 28</value>
+  </data>
+  <data name="editBookGenreComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;editBookGenreComboBox.Name" xml:space="preserve">
+    <value>editBookGenreComboBox</value>
+  </data>
+  <data name="&gt;&gt;editBookGenreComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookGenreComboBox.Parent" xml:space="preserve">
+    <value>groupBox15</value>
+  </data>
+  <data name="&gt;&gt;editBookGenreComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="groupBox15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 146</value>
+  </data>
+  <data name="groupBox15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 64</value>
+  </data>
+  <data name="groupBox15.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox15.Text" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="&gt;&gt;groupBox15.Name" xml:space="preserve">
+    <value>groupBox15</value>
+  </data>
+  <data name="&gt;&gt;groupBox15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox15.Parent" xml:space="preserve">
+    <value>groupBox14</value>
+  </data>
+  <data name="&gt;&gt;groupBox15.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="editBookNewTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
+  <data name="editBookNewTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="editBookNewTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 27</value>
+  </data>
+  <data name="editBookNewTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;editBookNewTitle.Name" xml:space="preserve">
+    <value>editBookNewTitle</value>
+  </data>
+  <data name="&gt;&gt;editBookNewTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookNewTitle.Parent" xml:space="preserve">
+    <value>groupBox16</value>
+  </data>
+  <data name="&gt;&gt;editBookNewTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="groupBox16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 69</value>
+  </data>
+  <data name="groupBox16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 56</value>
+  </data>
+  <data name="groupBox16.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox16.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="&gt;&gt;groupBox16.Name" xml:space="preserve">
+    <value>groupBox16</value>
+  </data>
+  <data name="&gt;&gt;groupBox16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox16.Parent" xml:space="preserve">
+    <value>groupBox14</value>
+  </data>
+  <data name="&gt;&gt;groupBox16.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="groupBox14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 57</value>
+  </data>
+  <data name="groupBox14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 334</value>
+  </data>
+  <data name="groupBox14.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;groupBox14.Name" xml:space="preserve">
+    <value>groupBox14</value>
+  </data>
+  <data name="&gt;&gt;groupBox14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox14.Parent" xml:space="preserve">
+    <value>editBookPanel</value>
+  </data>
+  <data name="&gt;&gt;groupBox14.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 399</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 44</value>
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>editBookPanel</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="editBookCaancelBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="editBookCaancelBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="editBookCaancelBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>561, 400</value>
+  </data>
+  <data name="editBookCaancelBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 44</value>
+  </data>
+  <data name="editBookCaancelBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="editBookCaancelBtn.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;editBookCaancelBtn.Name" xml:space="preserve">
+    <value>editBookCaancelBtn</value>
+  </data>
+  <data name="&gt;&gt;editBookCaancelBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookCaancelBtn.Parent" xml:space="preserve">
+    <value>editBookPanel</value>
+  </data>
+  <data name="&gt;&gt;editBookCaancelBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="editBookOriginalAuthor.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="editBookOriginalAuthor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 25</value>
+  </data>
+  <data name="editBookOriginalAuthor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 26</value>
+  </data>
+  <data name="editBookOriginalAuthor.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalAuthor.Name" xml:space="preserve">
+    <value>editBookOriginalAuthor</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalAuthor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalAuthor.Parent" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalAuthor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox21.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="groupBox21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 223</value>
+  </data>
+  <data name="groupBox21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 64</value>
+  </data>
+  <data name="groupBox21.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupBox21.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.Name" xml:space="preserve">
+    <value>groupBox21</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.Parent" xml:space="preserve">
+    <value>groupBox17</value>
+  </data>
+  <data name="&gt;&gt;groupBox21.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="editBookOriginalGenre.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="editBookOriginalGenre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 24</value>
+  </data>
+  <data name="editBookOriginalGenre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 26</value>
+  </data>
+  <data name="editBookOriginalGenre.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalGenre.Name" xml:space="preserve">
+    <value>editBookOriginalGenre</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalGenre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalGenre.Parent" xml:space="preserve">
+    <value>groupBox18</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalGenre.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="groupBox18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 132</value>
+  </data>
+  <data name="groupBox18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 64</value>
+  </data>
+  <data name="groupBox18.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox18.Text" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="&gt;&gt;groupBox18.Name" xml:space="preserve">
+    <value>groupBox18</value>
+  </data>
+  <data name="&gt;&gt;groupBox18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox18.Parent" xml:space="preserve">
+    <value>groupBox17</value>
+  </data>
+  <data name="&gt;&gt;groupBox18.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="editBookOriginalTitle.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="editBookOriginalTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
+  <data name="editBookOriginalTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="editBookOriginalTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 27</value>
+  </data>
+  <data name="editBookOriginalTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalTitle.Name" xml:space="preserve">
+    <value>editBookOriginalTitle</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalTitle.Parent" xml:space="preserve">
+    <value>groupBox20</value>
+  </data>
+  <data name="&gt;&gt;editBookOriginalTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox20.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="groupBox20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 55</value>
+  </data>
+  <data name="groupBox20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 56</value>
+  </data>
+  <data name="groupBox20.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox20.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Name" xml:space="preserve">
+    <value>groupBox20</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Parent" xml:space="preserve">
+    <value>groupBox17</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="groupBox17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 71</value>
+  </data>
+  <data name="groupBox17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 320</value>
+  </data>
+  <data name="groupBox17.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox17.Text" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="&gt;&gt;groupBox17.Name" xml:space="preserve">
+    <value>groupBox17</value>
+  </data>
+  <data name="&gt;&gt;groupBox17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox17.Parent" xml:space="preserve">
+    <value>editBookPanel</value>
+  </data>
+  <data name="&gt;&gt;groupBox17.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="editBookExitBtn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="editBookExitBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 21.75pt</value>
+  </data>
+  <data name="editBookExitBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="editBookExitBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>635, 4</value>
+  </data>
+  <data name="editBookExitBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="editBookExitBtn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 2</value>
+  </data>
+  <data name="editBookExitBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 35</value>
+  </data>
+  <data name="editBookExitBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="editBookExitBtn.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="&gt;&gt;editBookExitBtn.Name" xml:space="preserve">
+    <value>editBookExitBtn</value>
+  </data>
+  <data name="&gt;&gt;editBookExitBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookExitBtn.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;editBookExitBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>672, 44</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>editBookPanel</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="editBookPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 29</value>
+  </data>
+  <data name="editBookPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>674, 464</value>
+  </data>
+  <data name="editBookPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="editBookPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;editBookPanel.Name" xml:space="preserve">
+    <value>editBookPanel</value>
+  </data>
+  <data name="&gt;&gt;editBookPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editBookPanel.Parent" xml:space="preserve">
+    <value>booksPanel</value>
+  </data>
+  <data name="&gt;&gt;editBookPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="newBookAuthorComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 25</value>
@@ -1883,7 +2387,7 @@
     <value>1</value>
   </data>
   <data name="addBookPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 28</value>
+    <value>497, 28</value>
   </data>
   <data name="addBookPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>454, 464</value>
@@ -1904,7 +2408,7 @@
     <value>booksPanel</value>
   </data>
   <data name="&gt;&gt;addBookPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="booksExportBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1953,31 +2457,24 @@
     <value>booksPanel</value>
   </data>
   <data name="&gt;&gt;booksExportBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="booksAddBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        1wAAAdcBjJIIaAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKvSURBVHhe7Zu7
+        ihVBEIY/MfCSeUMwcA1MNTASTU1URDBwn8BERATxAcy8a6ioiIr6HG6qoO/hFW94V37oI2era89O72p5
+        Zrp/+JLqmtmqYqemz3Q3dNMa4BBwG3gGvAJ+Ar+mBMWimBTbrRTrapvEUrQRuAp8cP7otKOYrwAbbFJd
+        tAI4Bbx1btw33gAnbYKTtAq469yo7zxKj/JE6bmZcy4eCo8n9Qb92993Lhoa92ziI+mZt85D5YRNXt1+
+        CA2vK2qM894O1xynoXNplLw6Yx/f88vl/aghHnYGa+GgCqCpox2ohRsqwHNnoBaeqgDqiHagFl6qAN+d
+        gVr4pgJYYySfE9YeSWaIQK/do8DKxCzw0fGLIDNEcHo0CRnTGccvgswQwS6bfbJZvwgyQwTbbfbJZv0i
+        yAwRtALY7FsBWgFaAVoBHL8IMkMErQA2+5oK8AXYbLNPtq+O/78mM5TyKX1S3wqs68Bam/mYNGb9PbYB
+        x9N3PRtPKZmhlOwbe6COOfGUkhlK2WSjCtR6J55SMkMpMzaqQG1x4iklM5SiNfj/pbNOPKVkhqXwADgC
+        7OvAbpvFmDRm/T20lqFP2n9jl0pmiEBvDCs9StYvgswQQdUTIdEKYLNvBWgFaAVoBXD8IsgMEbQC2Oxr
+        K8Aemz2w1/GLIDNEcNlmnzZlW78IMkMEP4BzwA5gJ3A+2axfBJmhNtoWmeo3SemYiR2ohScqwE1noBau
+        qwA6YGQHamG/CqAjMu+cwaHzZ7O0pC+71mHoXBglL2m5SefurNNQeZ0WVeZJR8us41DRuqKrGrbOL3ho
+        Sqrh2Jya/kTJ4Y5zcd952OXg5Li07K1mYW/UN9TcF3zmF5M6pU5X9XGeoJgvpjfcsqXecCAtSOqYiX5E
+        TNOvSMXyIsWm6a1meIs+69JvFHT148kEdmUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="booksAddBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -2005,7 +2502,7 @@
     <value>booksPanel</value>
   </data>
   <data name="&gt;&gt;booksAddBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="booksSearchTxt.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 22</value>
@@ -2050,7 +2547,7 @@
     <value>booksPanel</value>
   </data>
   <data name="&gt;&gt;groupBox19.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="booksDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -2132,10 +2629,10 @@
     <value>booksPanel</value>
   </data>
   <data name="&gt;&gt;booksDataGridView.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="booksPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 65</value>
+    <value>45, 70</value>
   </data>
   <data name="booksPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>977, 640</value>
@@ -2153,9 +2650,33 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;booksPanel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;booksPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 46</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>977, 640</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

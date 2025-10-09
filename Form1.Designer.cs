@@ -89,6 +89,25 @@
             delBtn = new DataGridViewImageColumn();
             showBooks = new DataGridViewImageColumn();
             booksPanel = new Panel();
+            editBookPanel = new Panel();
+            groupBox14 = new GroupBox();
+            groupBox22 = new GroupBox();
+            editBookAuthorComboBox = new ComboBox();
+            groupBox15 = new GroupBox();
+            editBookGenreComboBox = new ComboBox();
+            groupBox16 = new GroupBox();
+            editBookNewTitle = new TextBox();
+            button3 = new Button();
+            editBookCaancelBtn = new Button();
+            groupBox17 = new GroupBox();
+            groupBox21 = new GroupBox();
+            editBookOriginalAuthor = new TextBox();
+            groupBox18 = new GroupBox();
+            editBookOriginalGenre = new TextBox();
+            groupBox20 = new GroupBox();
+            editBookOriginalTitle = new TextBox();
+            panel5 = new Panel();
+            editBookExitBtn = new Label();
             addBookPanel = new Panel();
             groupBox10 = new GroupBox();
             groupBox13 = new GroupBox();
@@ -111,6 +130,7 @@
             bookAuthor = new DataGridViewTextBoxColumn();
             bookEditBtn = new DataGridViewImageColumn();
             bookDelete = new DataGridViewImageColumn();
+            panel2 = new Panel();
             HeaderPanel.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             authorsPanel.SuspendLayout();
@@ -133,6 +153,16 @@
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)authorDataGridView).BeginInit();
             booksPanel.SuspendLayout();
+            editBookPanel.SuspendLayout();
+            groupBox14.SuspendLayout();
+            groupBox22.SuspendLayout();
+            groupBox15.SuspendLayout();
+            groupBox16.SuspendLayout();
+            groupBox17.SuspendLayout();
+            groupBox21.SuspendLayout();
+            groupBox18.SuspendLayout();
+            groupBox20.SuspendLayout();
+            panel5.SuspendLayout();
             addBookPanel.SuspendLayout();
             groupBox10.SuspendLayout();
             groupBox13.SuspendLayout();
@@ -143,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)booksAddBtn).BeginInit();
             groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)booksDataGridView).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // HeaderPanel
@@ -546,6 +577,7 @@
             // booksPanel
             // 
             booksPanel.BackColor = Color.FromArgb(28, 170, 93);
+            booksPanel.Controls.Add(editBookPanel);
             booksPanel.Controls.Add(addBookPanel);
             booksPanel.Controls.Add(booksExportBtn);
             booksPanel.Controls.Add(booksAddBtn);
@@ -553,6 +585,147 @@
             booksPanel.Controls.Add(booksDataGridView);
             resources.ApplyResources(booksPanel, "booksPanel");
             booksPanel.Name = "booksPanel";
+            // 
+            // editBookPanel
+            // 
+            editBookPanel.BorderStyle = BorderStyle.FixedSingle;
+            editBookPanel.Controls.Add(groupBox14);
+            editBookPanel.Controls.Add(button3);
+            editBookPanel.Controls.Add(editBookCaancelBtn);
+            editBookPanel.Controls.Add(groupBox17);
+            editBookPanel.Controls.Add(panel5);
+            resources.ApplyResources(editBookPanel, "editBookPanel");
+            editBookPanel.Name = "editBookPanel";
+            // 
+            // groupBox14
+            // 
+            groupBox14.Controls.Add(groupBox22);
+            groupBox14.Controls.Add(groupBox15);
+            groupBox14.Controls.Add(groupBox16);
+            resources.ApplyResources(groupBox14, "groupBox14");
+            groupBox14.Name = "groupBox14";
+            groupBox14.TabStop = false;
+            // 
+            // groupBox22
+            // 
+            groupBox22.Controls.Add(editBookAuthorComboBox);
+            resources.ApplyResources(groupBox22, "groupBox22");
+            groupBox22.Name = "groupBox22";
+            groupBox22.TabStop = false;
+            // 
+            // editBookAuthorComboBox
+            // 
+            editBookAuthorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            editBookAuthorComboBox.FormattingEnabled = true;
+            resources.ApplyResources(editBookAuthorComboBox, "editBookAuthorComboBox");
+            editBookAuthorComboBox.Name = "editBookAuthorComboBox";
+            // 
+            // groupBox15
+            // 
+            groupBox15.Controls.Add(editBookGenreComboBox);
+            resources.ApplyResources(groupBox15, "groupBox15");
+            groupBox15.Name = "groupBox15";
+            groupBox15.TabStop = false;
+            // 
+            // editBookGenreComboBox
+            // 
+            editBookGenreComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            editBookGenreComboBox.FormattingEnabled = true;
+            resources.ApplyResources(editBookGenreComboBox, "editBookGenreComboBox");
+            editBookGenreComboBox.Name = "editBookGenreComboBox";
+            // 
+            // groupBox16
+            // 
+            groupBox16.Controls.Add(editBookNewTitle);
+            resources.ApplyResources(groupBox16, "groupBox16");
+            groupBox16.Name = "groupBox16";
+            groupBox16.TabStop = false;
+            // 
+            // editBookNewTitle
+            // 
+            resources.ApplyResources(editBookNewTitle, "editBookNewTitle");
+            editBookNewTitle.Name = "editBookNewTitle";
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(button3, "button3");
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Name = "button3";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // editBookCaancelBtn
+            // 
+            editBookCaancelBtn.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(editBookCaancelBtn, "editBookCaancelBtn");
+            editBookCaancelBtn.ForeColor = SystemColors.ButtonFace;
+            editBookCaancelBtn.Name = "editBookCaancelBtn";
+            editBookCaancelBtn.UseVisualStyleBackColor = false;
+            editBookCaancelBtn.Click += editBookCaancelBtn_Click;
+            // 
+            // groupBox17
+            // 
+            groupBox17.Controls.Add(groupBox21);
+            groupBox17.Controls.Add(groupBox18);
+            groupBox17.Controls.Add(groupBox20);
+            resources.ApplyResources(groupBox17, "groupBox17");
+            groupBox17.Name = "groupBox17";
+            groupBox17.TabStop = false;
+            // 
+            // groupBox21
+            // 
+            groupBox21.Controls.Add(editBookOriginalAuthor);
+            resources.ApplyResources(groupBox21, "groupBox21");
+            groupBox21.Name = "groupBox21";
+            groupBox21.TabStop = false;
+            // 
+            // editBookOriginalAuthor
+            // 
+            resources.ApplyResources(editBookOriginalAuthor, "editBookOriginalAuthor");
+            editBookOriginalAuthor.Name = "editBookOriginalAuthor";
+            editBookOriginalAuthor.ReadOnly = true;
+            // 
+            // groupBox18
+            // 
+            groupBox18.Controls.Add(editBookOriginalGenre);
+            resources.ApplyResources(groupBox18, "groupBox18");
+            groupBox18.Name = "groupBox18";
+            groupBox18.TabStop = false;
+            // 
+            // editBookOriginalGenre
+            // 
+            resources.ApplyResources(editBookOriginalGenre, "editBookOriginalGenre");
+            editBookOriginalGenre.Name = "editBookOriginalGenre";
+            editBookOriginalGenre.ReadOnly = true;
+            // 
+            // groupBox20
+            // 
+            groupBox20.Controls.Add(editBookOriginalTitle);
+            resources.ApplyResources(groupBox20, "groupBox20");
+            groupBox20.Name = "groupBox20";
+            groupBox20.TabStop = false;
+            // 
+            // editBookOriginalTitle
+            // 
+            resources.ApplyResources(editBookOriginalTitle, "editBookOriginalTitle");
+            editBookOriginalTitle.Name = "editBookOriginalTitle";
+            editBookOriginalTitle.ReadOnly = true;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(35, 44, 65);
+            panel5.Controls.Add(editBookExitBtn);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.Name = "panel5";
+            // 
+            // editBookExitBtn
+            // 
+            resources.ApplyResources(editBookExitBtn, "editBookExitBtn");
+            editBookExitBtn.Cursor = Cursors.Hand;
+            editBookExitBtn.ForeColor = SystemColors.ControlLightLight;
+            editBookExitBtn.Name = "editBookExitBtn";
+            editBookExitBtn.Click += editBookExitBtn_Click;
             // 
             // addBookPanel
             // 
@@ -671,6 +844,7 @@
             // 
             resources.ApplyResources(booksSearchTxt, "booksSearchTxt");
             booksSearchTxt.Name = "booksSearchTxt";
+            booksSearchTxt.TextChanged += booksSearchTxt_TextChanged;
             // 
             // booksDataGridView
             // 
@@ -702,6 +876,7 @@
             booksDataGridView.RowTemplate.ReadOnly = true;
             booksDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             booksDataGridView.ShowEditingIcon = false;
+            booksDataGridView.CellContentClick += booksDataGridView_CellContentClick;
             // 
             // bookTitle
             // 
@@ -746,13 +921,19 @@
             bookDelete.ReadOnly = true;
             bookDelete.Resizable = DataGridViewTriState.True;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(booksPanel);
+            panel2.Controls.Add(authorsPanel);
+            resources.ApplyResources(panel2, "panel2");
+            panel2.Name = "panel2";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            Controls.Add(booksPanel);
-            Controls.Add(authorsPanel);
+            Controls.Add(panel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(HeaderPanel);
             FormBorderStyle = FormBorderStyle.None;
@@ -787,6 +968,21 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)authorDataGridView).EndInit();
             booksPanel.ResumeLayout(false);
+            editBookPanel.ResumeLayout(false);
+            groupBox14.ResumeLayout(false);
+            groupBox22.ResumeLayout(false);
+            groupBox15.ResumeLayout(false);
+            groupBox16.ResumeLayout(false);
+            groupBox16.PerformLayout();
+            groupBox17.ResumeLayout(false);
+            groupBox21.ResumeLayout(false);
+            groupBox21.PerformLayout();
+            groupBox18.ResumeLayout(false);
+            groupBox18.PerformLayout();
+            groupBox20.ResumeLayout(false);
+            groupBox20.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             addBookPanel.ResumeLayout(false);
             groupBox10.ResumeLayout(false);
             groupBox13.ResumeLayout(false);
@@ -800,6 +996,7 @@
             groupBox19.ResumeLayout(false);
             groupBox19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)booksDataGridView).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -876,5 +1073,26 @@
         private GroupBox groupBox13;
         private ComboBox newBookAuthorComboBox;
         private ComboBox newBookGenreCombobox;
+        private Panel editBookPanel;
+        private GroupBox groupBox14;
+        private GroupBox groupBox15;
+        private DateTimePicker dateTimePicker2;
+        private GroupBox groupBox16;
+        private TextBox editBookNewTitle;
+        private Button button3;
+        private Button editBookCaancelBtn;
+        private GroupBox groupBox17;
+        private GroupBox groupBox18;
+        private GroupBox groupBox20;
+        private TextBox editBookOriginalTitle;
+        private Panel panel5;
+        private Label editBookExitBtn;
+        private GroupBox groupBox22;
+        private ComboBox editBookAuthorComboBox;
+        private ComboBox editBookGenreComboBox;
+        private GroupBox groupBox21;
+        private TextBox editBookOriginalAuthor;
+        private TextBox editBookOriginalGenre;
+        private Panel panel2;
     }
 }
