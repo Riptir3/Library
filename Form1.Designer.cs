@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
@@ -82,6 +88,29 @@
             ChangeBtn = new DataGridViewImageColumn();
             delBtn = new DataGridViewImageColumn();
             showBooks = new DataGridViewImageColumn();
+            booksPanel = new Panel();
+            addBookPanel = new Panel();
+            groupBox10 = new GroupBox();
+            groupBox13 = new GroupBox();
+            newBookAuthorComboBox = new ComboBox();
+            button1 = new Button();
+            button2 = new Button();
+            groupBox11 = new GroupBox();
+            newBookGenreCombobox = new ComboBox();
+            groupBox12 = new GroupBox();
+            newBookNameTxt = new TextBox();
+            panel4 = new Panel();
+            label2 = new Label();
+            booksExportBtn = new PictureBox();
+            booksAddBtn = new PictureBox();
+            groupBox19 = new GroupBox();
+            booksSearchTxt = new TextBox();
+            booksDataGridView = new DataGridView();
+            bookTitle = new DataGridViewTextBoxColumn();
+            bookGenre = new DataGridViewTextBoxColumn();
+            bookAuthor = new DataGridViewTextBoxColumn();
+            bookEditBtn = new DataGridViewImageColumn();
+            bookDelete = new DataGridViewImageColumn();
             HeaderPanel.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             authorsPanel.SuspendLayout();
@@ -103,6 +132,17 @@
             ((System.ComponentModel.ISupportInitialize)addAuthor).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)authorDataGridView).BeginInit();
+            booksPanel.SuspendLayout();
+            addBookPanel.SuspendLayout();
+            groupBox10.SuspendLayout();
+            groupBox13.SuspendLayout();
+            groupBox11.SuspendLayout();
+            groupBox12.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)booksExportBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)booksAddBtn).BeginInit();
+            groupBox19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)booksDataGridView).BeginInit();
             SuspendLayout();
             // 
             // HeaderPanel
@@ -178,6 +218,7 @@
             booksBtn.ForeColor = SystemColors.ButtonHighlight;
             booksBtn.Name = "booksBtn";
             booksBtn.UseVisualStyleBackColor = true;
+            booksBtn.Click += booksBtn_Click;
             // 
             // statBtn
             // 
@@ -422,20 +463,20 @@
             // 
             authorDataGridView.AllowUserToAddRows = false;
             authorDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 192, 128);
-            authorDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 192, 128);
+            authorDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(authorDataGridView, "authorDataGridView");
             authorDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             authorDataGridView.BackgroundColor = Color.White;
             authorDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Control;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            authorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            authorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             authorDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             authorDataGridView.Columns.AddRange(new DataGridViewColumn[] { AuthorName, Date, Books, ChangeBtn, delBtn, showBooks });
             authorDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -443,8 +484,8 @@
             authorDataGridView.Name = "authorDataGridView";
             authorDataGridView.ReadOnly = true;
             authorDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            authorDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            authorDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             authorDataGridView.RowTemplate.ReadOnly = true;
             authorDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             authorDataGridView.ShowEditingIcon = false;
@@ -453,24 +494,24 @@
             // AuthorName
             // 
             AuthorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            AuthorName.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            AuthorName.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(AuthorName, "AuthorName");
             AuthorName.Name = "AuthorName";
             AuthorName.ReadOnly = true;
             // 
             // Date
             // 
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Date.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Date.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(Date, "Date");
             Date.Name = "Date";
             Date.ReadOnly = true;
             // 
             // Books
             // 
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Books.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Books.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(Books, "Books");
             Books.Name = "Books";
             Books.ReadOnly = true;
@@ -502,11 +543,215 @@
             showBooks.Resizable = DataGridViewTriState.True;
             showBooks.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
+            // booksPanel
+            // 
+            booksPanel.BackColor = Color.FromArgb(28, 170, 93);
+            booksPanel.Controls.Add(addBookPanel);
+            booksPanel.Controls.Add(booksExportBtn);
+            booksPanel.Controls.Add(booksAddBtn);
+            booksPanel.Controls.Add(groupBox19);
+            booksPanel.Controls.Add(booksDataGridView);
+            resources.ApplyResources(booksPanel, "booksPanel");
+            booksPanel.Name = "booksPanel";
+            // 
+            // addBookPanel
+            // 
+            addBookPanel.BorderStyle = BorderStyle.FixedSingle;
+            addBookPanel.Controls.Add(groupBox10);
+            addBookPanel.Controls.Add(panel4);
+            resources.ApplyResources(addBookPanel, "addBookPanel");
+            addBookPanel.Name = "addBookPanel";
+            // 
+            // groupBox10
+            // 
+            groupBox10.Controls.Add(groupBox13);
+            groupBox10.Controls.Add(button1);
+            groupBox10.Controls.Add(button2);
+            groupBox10.Controls.Add(groupBox11);
+            groupBox10.Controls.Add(groupBox12);
+            resources.ApplyResources(groupBox10, "groupBox10");
+            groupBox10.Name = "groupBox10";
+            groupBox10.TabStop = false;
+            // 
+            // groupBox13
+            // 
+            groupBox13.Controls.Add(newBookAuthorComboBox);
+            resources.ApplyResources(groupBox13, "groupBox13");
+            groupBox13.Name = "groupBox13";
+            groupBox13.TabStop = false;
+            // 
+            // newBookAuthorComboBox
+            // 
+            newBookAuthorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            newBookAuthorComboBox.FormattingEnabled = true;
+            resources.ApplyResources(newBookAuthorComboBox, "newBookAuthorComboBox");
+            newBookAuthorComboBox.Name = "newBookAuthorComboBox";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(button1, "button1");
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(35, 44, 65);
+            resources.ApplyResources(button2, "button2");
+            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // groupBox11
+            // 
+            groupBox11.Controls.Add(newBookGenreCombobox);
+            resources.ApplyResources(groupBox11, "groupBox11");
+            groupBox11.Name = "groupBox11";
+            groupBox11.TabStop = false;
+            // 
+            // newBookGenreCombobox
+            // 
+            newBookGenreCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            newBookGenreCombobox.FormattingEnabled = true;
+            resources.ApplyResources(newBookGenreCombobox, "newBookGenreCombobox");
+            newBookGenreCombobox.Name = "newBookGenreCombobox";
+            // 
+            // groupBox12
+            // 
+            groupBox12.Controls.Add(newBookNameTxt);
+            resources.ApplyResources(groupBox12, "groupBox12");
+            groupBox12.Name = "groupBox12";
+            groupBox12.TabStop = false;
+            // 
+            // newBookNameTxt
+            // 
+            resources.ApplyResources(newBookNameTxt, "newBookNameTxt");
+            newBookNameTxt.Name = "newBookNameTxt";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(35, 44, 65);
+            panel4.Controls.Add(label2);
+            resources.ApplyResources(panel4, "panel4");
+            panel4.Name = "panel4";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Cursor = Cursors.Hand;
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Name = "label2";
+            label2.Click += label2_Click;
+            // 
+            // booksExportBtn
+            // 
+            resources.ApplyResources(booksExportBtn, "booksExportBtn");
+            booksExportBtn.Name = "booksExportBtn";
+            booksExportBtn.TabStop = false;
+            // 
+            // booksAddBtn
+            // 
+            resources.ApplyResources(booksAddBtn, "booksAddBtn");
+            booksAddBtn.Name = "booksAddBtn";
+            booksAddBtn.TabStop = false;
+            booksAddBtn.Click += booksAddBtn_Click;
+            // 
+            // groupBox19
+            // 
+            groupBox19.Controls.Add(booksSearchTxt);
+            groupBox19.ForeColor = SystemColors.ButtonHighlight;
+            resources.ApplyResources(groupBox19, "groupBox19");
+            groupBox19.Name = "groupBox19";
+            groupBox19.TabStop = false;
+            // 
+            // booksSearchTxt
+            // 
+            resources.ApplyResources(booksSearchTxt, "booksSearchTxt");
+            booksSearchTxt.Name = "booksSearchTxt";
+            // 
+            // booksDataGridView
+            // 
+            booksDataGridView.AllowUserToAddRows = false;
+            booksDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 192, 128);
+            booksDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            resources.ApplyResources(booksDataGridView, "booksDataGridView");
+            booksDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            booksDataGridView.BackgroundColor = Color.White;
+            booksDataGridView.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            booksDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            booksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            booksDataGridView.Columns.AddRange(new DataGridViewColumn[] { bookTitle, bookGenre, bookAuthor, bookEditBtn, bookDelete });
+            booksDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            booksDataGridView.MultiSelect = false;
+            booksDataGridView.Name = "booksDataGridView";
+            booksDataGridView.ReadOnly = true;
+            booksDataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            booksDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            booksDataGridView.RowTemplate.ReadOnly = true;
+            booksDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            booksDataGridView.ShowEditingIcon = false;
+            // 
+            // bookTitle
+            // 
+            bookTitle.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            bookTitle.DefaultCellStyle = dataGridViewCellStyle9;
+            resources.ApplyResources(bookTitle, "bookTitle");
+            bookTitle.Name = "bookTitle";
+            bookTitle.ReadOnly = true;
+            // 
+            // bookGenre
+            // 
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            bookGenre.DefaultCellStyle = dataGridViewCellStyle10;
+            resources.ApplyResources(bookGenre, "bookGenre");
+            bookGenre.Name = "bookGenre";
+            bookGenre.ReadOnly = true;
+            // 
+            // bookAuthor
+            // 
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            bookAuthor.DefaultCellStyle = dataGridViewCellStyle11;
+            resources.ApplyResources(bookAuthor, "bookAuthor");
+            bookAuthor.Name = "bookAuthor";
+            bookAuthor.ReadOnly = true;
+            bookAuthor.Resizable = DataGridViewTriState.True;
+            bookAuthor.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // bookEditBtn
+            // 
+            resources.ApplyResources(bookEditBtn, "bookEditBtn");
+            bookEditBtn.Image = (Image)resources.GetObject("bookEditBtn.Image");
+            bookEditBtn.Name = "bookEditBtn";
+            bookEditBtn.ReadOnly = true;
+            bookEditBtn.Resizable = DataGridViewTriState.True;
+            // 
+            // bookDelete
+            // 
+            resources.ApplyResources(bookDelete, "bookDelete");
+            bookDelete.Image = (Image)resources.GetObject("bookDelete.Image");
+            bookDelete.Name = "bookDelete";
+            bookDelete.ReadOnly = true;
+            bookDelete.Resizable = DataGridViewTriState.True;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            Controls.Add(booksPanel);
             Controls.Add(authorsPanel);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(HeaderPanel);
@@ -541,6 +786,20 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)authorDataGridView).EndInit();
+            booksPanel.ResumeLayout(false);
+            addBookPanel.ResumeLayout(false);
+            groupBox10.ResumeLayout(false);
+            groupBox13.ResumeLayout(false);
+            groupBox11.ResumeLayout(false);
+            groupBox12.ResumeLayout(false);
+            groupBox12.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)booksExportBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)booksAddBtn).EndInit();
+            groupBox19.ResumeLayout(false);
+            groupBox19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)booksDataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -593,5 +852,29 @@
         private TextBox authorEditOriginalName;
         private Panel panel3;
         private Label authorEditExit;
+        private Panel booksPanel;
+        private PictureBox booksExportBtn;
+        private PictureBox booksAddBtn;
+        private GroupBox groupBox19;
+        private TextBox booksSearchTxt;
+        private DataGridView booksDataGridView;
+        private DataGridViewTextBoxColumn bookTitle;
+        private DataGridViewTextBoxColumn bookGenre;
+        private DataGridViewTextBoxColumn bookAuthor;
+        private DataGridViewImageColumn bookEditBtn;
+        private DataGridViewImageColumn bookDelete;
+        private Panel addBookPanel;
+        private GroupBox groupBox10;
+        private Button button1;
+        private Button button2;
+        private GroupBox groupBox11;
+        private DateTimePicker dateTimePicker1;
+        private GroupBox groupBox12;
+        private TextBox newBookNameTxt;
+        private Panel panel4;
+        private Label label2;
+        private GroupBox groupBox13;
+        private ComboBox newBookAuthorComboBox;
+        private ComboBox newBookGenreCombobox;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Library.Models;
 using Library.Repositories;
+using Library.SpecialRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace Library.Data
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<Book> Books { get; }
-        IRepository<Author> Authors { get; }
+        IBookRepository Books { get; }
+        IAuthorRepository Authors { get; }
 
         void Save(); 
     }

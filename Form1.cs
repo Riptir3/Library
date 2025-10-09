@@ -1,5 +1,6 @@
 using Library.Controllers;
 using Library.Data;
+using Library.Enums;
 using Library.Models;
 
 namespace Library
@@ -8,11 +9,13 @@ namespace Library
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly AuthorController _authorController;
-        public Form1(IUnitOfWork unitOfWork, AuthorController authorController)
+        private readonly BookController _bookController;
+        public Form1(IUnitOfWork unitOfWork, AuthorController authorController, BookController bookController)
         {
             InitializeComponent();
             _unitOfWork = unitOfWork;
             _authorController = authorController;
+            _bookController = bookController;
         }
 
         #region Formatting
@@ -51,12 +54,20 @@ namespace Library
         }
         private void ShowPanel(Panel showPanel)
         {
-            var panles = new Panel[] { authorsPanel, addAuthorPanel };
+            var panles = new Panel[] { authorsPanel, addAuthorPanel, booksPanel, addBookPanel };
 
             foreach (var panel in panles)
             {
-                if (showPanel == panel) panel.Show();
-                else panel.Hide();
+                if (showPanel == panel)
+                {
+                    panel.Show();
+                    panel.Dock = DockStyle.Fill;
+                }
+                else
+                {
+                    panel.Hide();
+                    panel.Dock = DockStyle.None;
+                }
             }
         }
 
@@ -72,7 +83,7 @@ namespace Library
         private void LoadAuthorsData()
         {
             authorDataGridView.Rows.Clear();
-            var authors = _unitOfWork.Authors.GetAll();
+            var authors = _unitOfWork.Authors.GetAllWithBooks();
 
             foreach (var author in authors)
             {
@@ -253,5 +264,94 @@ namespace Library
             }
         }
         #endregion
+
+        #region Book's panel
+        private void booksBtn_Click(object sender, EventArgs e)
+        {
+            LoadBooksData();
+            ShowPanel(booksPanel);
+        }
+
+        private void LoadBooksData()
+        {
+            booksDataGridView.Rows.Clear();
+            var books = _unitOfWork.Books.GetAllWithAuthor();
+
+            foreach (var book in books)
+            {
+                booksDataGridView.Rows.Add(book.Title, book.Genre, book.Author.Name);
+            }
+        }
+        #endregion
+
+        private void booksAddBtn_Click(object sender, EventArgs e)
+        {
+            addBookPanel.Show();
+            uploadNewBookCombobox();
+            newBookGenreCombobox.SelectedIndex = 0;
+            newBookAuthorComboBox.SelectedIndex = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            resetAddBookPanel();
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+            resetAddBookPanel();
+        }
+
+        private void uploadNewBookCombobox()
+        {
+            var authors = _unitOfWork.Authors.GetAll().Select(a => a.Name).ToList();
+
+            newBookAuthorComboBox.DataSource = authors;
+
+            var genres = Enum.GetValues(typeof(Genre)).Cast<Genre>().ToList();
+
+            newBookGenreCombobox.DataSource = genres;
+        }
+
+        private void resetAddBookPanel()
+        {
+            addBookPanel.Hide();
+            newBookNameTxt.Text = string.Empty;
+            newBookGenreCombobox.SelectedIndex = 0;
+            newBookAuthorComboBox.SelectedIndex = 0;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var newBookName = newBookNameTxt.Text;
+            if (newBookName == string.Empty)
+            {
+                MessageBox.Show("Book's title can not be nothing.");
+                return;
+            }
+
+            var authorId = _unitOfWork.Authors.GetAll().Where(a => a.Name == newBookAuthorComboBox.SelectedValue.ToString()).First().Id;
+
+            var newBook = new Book
+            {
+                Title = newBookName,
+                Genre = newBookGenreCombobox.SelectedValue.ToString(),
+                AuthorId = authorId
+            };
+
+            bool canAddBook = _bookController.AddBook(newBook);
+
+            if (!canAddBook)
+            {
+                MessageBox.Show("Book is already in the library.");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Book is added.");
+                _unitOfWork.Save();
+                LoadBooksData();
+                resetAddBookPanel();
+            }
+        }
     }
 }
