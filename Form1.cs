@@ -1,8 +1,10 @@
 using Library.Controllers;
 using Library.Data;
+using Library.DatabaseConfig;
 using Library.Enums;
+using Library.Excel;
+using Library.Log;
 using Library.Models;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Library
 {
@@ -11,12 +13,17 @@ namespace Library
         private readonly IUnitOfWork _unitOfWork;
         private readonly AuthorController _authorController;
         private readonly BookController _bookController;
+        private readonly AdvancedLoggerSync logger;
         public Form1(IUnitOfWork unitOfWork, AuthorController authorController, BookController bookController)
         {
             InitializeComponent();
             _unitOfWork = unitOfWork;
             _authorController = authorController;
             _bookController = bookController;
+
+            logger = new AdvancedLoggerSync("Logs");
+
+            ShowPanel(homePanel);
         }
 
         #region Formatting
@@ -55,7 +62,7 @@ namespace Library
         }
         private void ShowPanel(Panel showPanel)
         {
-            var panles = new Panel[] { authorsPanel, addAuthorPanel, booksPanel, addBookPanel, editBookPanel };
+            var panles = new Panel[] { authorsPanel, addAuthorPanel, booksPanel, addBookPanel, editBookPanel, homePanel, statPanel };
 
             foreach (var panel in panles)
             {
@@ -72,6 +79,13 @@ namespace Library
             }
         }
 
+        #endregion
+
+        #region Home's panel
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            ShowPanel(homePanel);
+        }
         #endregion
 
         #region Author's panel
@@ -140,6 +154,7 @@ namespace Library
                 MessageBox.Show("Author is added.");
                 LoadAuthorsData();
                 ResetAddAuthorsPanel();
+                logger.Log($"Author with name: {newAuthor.Name} added.", LogLevel.Info);
             }
             else
             {
@@ -157,6 +172,7 @@ namespace Library
                 _unitOfWork.Save();
                 LoadAuthorsData();
                 MessageBox.Show("Author is deleted!");
+                logger.Log($"Author with name: {author.Name} is deleted.", LogLevel.Warning);
             }
         }
 
@@ -174,8 +190,19 @@ namespace Library
                     authorDelete(author);
                     break;
                 case 5:
-                    MessageBox.Show("Books of author");
+                    authorBookShow(author);
                     break;
+            }
+        }
+
+        private void authorBookShow(Author author)
+        {
+            var booksCount = _unitOfWork.Books.GetAllWithAuthor().Where(b => b.Author == author).Count();
+
+            if (booksCount != 0)
+            {
+                booksSearchTxt.Text = author.Name;
+                ShowPanel(booksPanel);
             }
         }
 
@@ -238,6 +265,7 @@ namespace Library
                 LoadAuthorsData();
                 MessageBox.Show("Author's data is changed.");
                 resetAuthorEditPanel();
+                logger.Log($"Author with name: {authorNewName} editted.", LogLevel.Warning);
             }
         }
 
@@ -283,8 +311,6 @@ namespace Library
                 booksDataGridView.Rows.Add(book.Title, book.Genre, book.Author.Name);
             }
         }
-        #endregion
-
         private void booksAddBtn_Click(object sender, EventArgs e)
         {
             addBookPanel.Show();
@@ -352,6 +378,7 @@ namespace Library
                 _unitOfWork.Save();
                 LoadBooksData();
                 resetAddBookPanel();
+                logger.Log($"Book with title: {newBook.Title} added.", LogLevel.Info);
             }
         }
 
@@ -382,6 +409,7 @@ namespace Library
             _unitOfWork.Save();
             LoadBooksData();
             MessageBox.Show("Book is deleted.");
+            logger.Log($"Book with title: {book.Title} is deleted.", LogLevel.Warning);
         }
 
         private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -448,6 +476,7 @@ namespace Library
                     MessageBox.Show("Book is editted.");
                     editBookPanel.Hide();
                     LoadBooksData();
+                    logger.Log($"Book with title: {newTitle} is edttted.", LogLevel.Warning);
                     return;
                 }
                 else
@@ -491,10 +520,47 @@ namespace Library
                 {
                     foreach (var book in books)
                     {
-                        booksDataGridView.Rows.Add(book.Title,book.Genre,book.Author.Name);
+                        booksDataGridView.Rows.Add(book.Title, book.Genre, book.Author.Name);
                     }
                 }
             }
         }
+        #endregion
+
+        #region Excel
+        private void exportAuthors_Click(object sender, EventArgs e)
+        {
+            var authors = _unitOfWork.Authors.GetAllWithBooks().Select(a => new
+            {
+                a.Name,
+                a.BirthDate,
+                a.Books.Count,
+            }).ToList();
+
+            ExcelHelper.ExportToExcel(authors, "Auhor's Data", "Authors");
+            logger.Log("Author's excel file is created", LogLevel.Info);
+        }
+
+        private void booksExportBtn_Click(object sender, EventArgs e)
+        {
+            var books = _unitOfWork.Books.GetAllWithAuthor().Select(b => new
+            {
+                b.Title,
+                b.Genre,
+                Author = b.Author.Name
+            }).ToList();
+
+            ExcelHelper.ExportToExcel(books, "Book's data", "Books");
+            logger.Log("Book's excel file is created", LogLevel.Info);
+        }
+        #endregion
+
+        #region Stat's panel
+        private void statBtn_Click(object sender, EventArgs e)
+        {
+            ShowPanel(statPanel);
+        }
+
+        #endregion
     }
 }
