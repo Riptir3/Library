@@ -1,4 +1,5 @@
-﻿using Library.Models;
+﻿using Library.DTOs;
+using Library.Models;
 using Library.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,6 @@ namespace Library.SpecialRepositories
     {
         IEnumerable<Author> GetAllWithBooks();
         Author? GetByIdWithBooks(int id);
+        IEnumerable<AuthorsGenreStat> GetAuthorGenreStatList(string name);
     }
 }

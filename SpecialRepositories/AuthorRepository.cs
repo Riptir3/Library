@@ -1,4 +1,5 @@
 ﻿using Library.DatabaseConfig;
+using Library.DTOs;
 using Library.Models;
 using Library.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,20 @@ namespace Library.SpecialRepositories
             return _context.Set<Author>()
                 .Include(a => a.Books)
                 .FirstOrDefault(a => a.Id == id);
+        }
+
+        public IEnumerable<AuthorsGenreStat> GetAuthorGenreStatList(string name)
+        {
+            return _context.Books
+                .Where(b => b.Author.Name == name)
+                .GroupBy(b => new {b.Author.Name,b.Genre })
+                .Select(g => new AuthorsGenreStat
+                {
+                    AuthorName = g.Key.Name,
+                    Genre = g.Key.Genre,
+                    BookCount = g.Count()
+                })
+                .ToList();
         }
     }
 }

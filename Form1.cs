@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.Drawing.Charts;
 using Library.Controllers;
 using Library.Data;
 using Library.DatabaseConfig;
@@ -5,6 +6,8 @@ using Library.Enums;
 using Library.Excel;
 using Library.Log;
 using Library.Models;
+using ScottPlot;
+using ScottPlot.WinForms;
 
 namespace Library
 {
@@ -40,25 +43,25 @@ namespace Library
 
         private void exitLabel_MouseHover(object sender, EventArgs e)
         {
-            exitLabel.ForeColor = Color.Red;
-            exitLabel.BackColor = Color.FromArgb(40, 50, 70);
+            exitLabel.ForeColor = System.Drawing.Color.Red;
+            exitLabel.BackColor = System.Drawing.Color.FromArgb(40, 50, 70);
         }
 
         private void exitLabel_MouseLeave(object sender, EventArgs e)
         {
-            exitLabel.ForeColor = Color.White;
-            exitLabel.BackColor = Color.FromArgb(35, 44, 65);
+            exitLabel.ForeColor = System.Drawing.Color.White;
+            exitLabel.BackColor = System.Drawing.Color.FromArgb(35, 44, 65);
         }
 
         private void minLabel_MouseHover(object sender, EventArgs e)
         {
-            minLabel.BackColor = Color.FromArgb(40, 50, 70);
+            minLabel.BackColor = System.Drawing.Color.FromArgb(40, 50, 70);
         }
 
         private void minLabel_MouseLeave(object sender, EventArgs e)
         {
-            minLabel.BackColor = Color.FromArgb(35, 44, 65);
-            minLabel.ForeColor = Color.White;
+            minLabel.BackColor = System.Drawing.Color.FromArgb(35, 44, 65);
+            minLabel.ForeColor = System.Drawing.Color.White;
         }
         private void ShowPanel(Panel showPanel)
         {
@@ -558,7 +561,124 @@ namespace Library
         #region Stat's panel
         private void statBtn_Click(object sender, EventArgs e)
         {
-            ShowPanel(statPanel);
+            bool canOpen = _unitOfWork.Books.GetAll().Count() > 0;
+            if (canOpen)
+            {
+                ShowPanel(statPanel);
+                loadAuthorsName();
+                CreatePieChart();
+                CreateBarChart();
+            }
+            else
+            {
+                MessageBox.Show("No data to show.");
+            }
+        }
+
+        private void loadAuthorsName()
+        {
+            var authorsName = _unitOfWork.Books.GetAllWithAuthor().Select(b => b.Author.Name).Distinct().ToList();
+
+            authorsStatCombobox.DataSource = authorsName;
+        }
+
+        private void CreatePieChart()
+        {
+            Random rnd = new Random();
+
+            ScottPlot.Color GetRandomColor() => new ScottPlot.Color(rnd.Next(50, 256), rnd.Next(50, 256), rnd.Next(50, 256));
+            HashSet<ScottPlot.Color> usedColors = [];
+
+            var authorName = authorsStatCombobox.SelectedValue.ToString();
+            var dtos = _unitOfWork.Authors.GetAuthorGenreStatList(authorName);
+
+            var formsPlot = new FormsPlot
+            {
+                Dock = DockStyle.Fill
+            };
+
+            ScottPlot.Plot myPlot = formsPlot.Plot;
+
+            List<PieSlice> slices = [];
+
+            foreach (var dto in dtos)
+            {
+                ScottPlot.Color color;
+
+                do
+                {
+                  color = GetRandomColor();
+                } while (usedColors.Contains(color));
+
+                PieSlice slice = new() { Value = dto.BookCount, FillColor = color, Label = dto.BookCount.ToString() };
+                slice.LegendText = dto.Genre;
+                slice.LabelBold = true;
+                slices.Add(slice);
+            }
+
+            var pie = myPlot.Add.Pie(slices);
+            pie.ExplodeFraction = .1;
+            pie.SliceLabelDistance = dtos.Count() != 1 ? 0.5 : 0;
+
+            slices.ForEach(x => x.LabelFontColor = x.FillColor.Darken(.5));
+
+            myPlot.Axes.Frameless();
+            myPlot.HideGrid();
+
+            auhtorPieChartPanel.Controls.Clear();
+            auhtorPieChartPanel.Controls.Add(formsPlot);
+
+            formsPlot.Refresh();
+        }
+
+        private void CreateBarChart()
+        {
+            var authors = _unitOfWork.Authors.GetAllWithBooks().ToList();
+
+            var formsPlot1 = new FormsPlot
+            {
+                Dock = DockStyle.Fill
+            };
+
+            double[] values = new double[authors.Count];
+            Tick[] ticks = new Tick[authors.Count];
+
+            for (int i = 0; i < authors.Count(); i++)
+            {
+                values[i] = authors[i].Books.Count;
+                ticks[i] = new Tick(i, authors[i].Name);
+            }
+
+            formsPlot1.Plot.Add.Bars(values);
+            formsPlot1.Plot.Axes.Margins(bottom: 0);
+
+            formsPlot1.Plot.Axes.Bottom.TickGenerator = new ScottPlot.TickGenerators.NumericManual(ticks);
+            formsPlot1.Plot.Axes.Bottom.TickLabelStyle.Rotation = 45;
+            formsPlot1.Plot.Axes.Bottom.TickLabelStyle.Alignment = Alignment.MiddleLeft;
+
+            // determine the width of the largest tick label
+            float largestLabelWidth = 0;
+            using (Paint paint = ScottPlot.Paint.NewDisposablePaint())
+            {
+                foreach (Tick tick in ticks)
+                {
+                    PixelSize size = formsPlot1.Plot.Axes.Bottom.TickLabelStyle.Measure(tick.Label, paint).Size;
+                    largestLabelWidth = Math.Max(largestLabelWidth, size.Width);
+                }
+            }
+            // ensure axis panels do not get smaller than the largest label
+            formsPlot1.Plot.Axes.Bottom.MinimumSize = largestLabelWidth;
+            formsPlot1.Plot.Axes.Right.MinimumSize = largestLabelWidth;
+
+            authorsAllStatPanel.Controls.Clear();
+            authorsAllStatPanel.Controls.Add(formsPlot1);
+
+            formsPlot1.Refresh();
+        }
+
+        private void authorsStatCombobox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CreatePieChart();
         }
 
         #endregion
