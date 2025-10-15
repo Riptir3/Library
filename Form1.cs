@@ -20,6 +20,7 @@ namespace Library
         public Form1(IUnitOfWork unitOfWork, AuthorController authorController, BookController bookController)
         {
             InitializeComponent();
+
             _unitOfWork = unitOfWork;
             _authorController = authorController;
             _bookController = bookController;
@@ -92,24 +93,25 @@ namespace Library
         #endregion
 
         #region Author's panel
-        private void authorsBtn_Click(object sender, EventArgs e) // Authors page
+        private void authorsBtn_Click(object sender, EventArgs e) 
         {
             LoadAuthorsData();
             ShowPanel(authorsPanel);
+            authorSearchTxt.Text = string.Empty;
         }
 
         private void LoadAuthorsData()
         {
             authorDataGridView.Rows.Clear();
-            var authors = _unitOfWork.Authors.GetAllWithBooks();
+            var authors = _unitOfWork.Authors.GetAuthorsExportFormat();
 
             foreach (var author in authors)
             {
-                authorDataGridView.Rows.Add(author.Name, author.BirthDate, author.Books.Count);
+                authorDataGridView.Rows.Add(author.Name,author.BirthDate,author.BookCount);
             }
         }
 
-        private void addAuthor_Click(object sender, EventArgs e) // show panel, where can add new author
+        private void addAuthor_Click(object sender, EventArgs e) 
         {
             addAuthorPanel.Show();
         }
@@ -155,8 +157,11 @@ namespace Library
             if (canAddAuthor)
             {
                 MessageBox.Show("Author is added.");
+
                 LoadAuthorsData();
                 ResetAddAuthorsPanel();
+                authorSearchTxt.Text = string.Empty;
+
                 logger.Log($"Author with name: {newAuthor.Name} added.", LogLevel.Info);
             }
             else
@@ -165,7 +170,7 @@ namespace Library
             }
         }
 
-        private void authorDelete(Author author)
+        private void AuthorDelete(Author author)
         {
             DialogResult dialogResult = MessageBox.Show("Sure", "Want to delete author with her/his books?", MessageBoxButtons.YesNo);
 
@@ -182,7 +187,7 @@ namespace Library
         private void authorDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var authorName = authorDataGridView.CurrentRow.Cells[0].Value as string;
-            var author = _unitOfWork.Authors.GetAll().Where(a => a.Name == authorName).First();
+            var author = _unitOfWork.Authors.GetByName(authorName);
 
             switch (e.ColumnIndex)
             {
@@ -190,17 +195,17 @@ namespace Library
                     authorEditPanelOpen(author);
                     break;
                 case 4:
-                    authorDelete(author);
+                    AuthorDelete(author);
                     break;
                 case 5:
-                    authorBookShow(author);
+                    AuthorBookShow(author);
                     break;
             }
         }
 
-        private void authorBookShow(Author author)
+        private void AuthorBookShow(Author author)
         {
-            var booksCount = _unitOfWork.Books.GetAllWithAuthor().Where(b => b.Author == author).Count();
+            var booksCount = author.Books.Count();
 
             if (booksCount != 0)
             {
@@ -231,6 +236,7 @@ namespace Library
         {
             authorEditNewName.Text = string.Empty;
             authorEditPanel.Visible = false;
+            authorSearchTxt.Text = string.Empty;
         }
 
         private void authorEditSave_Click(object sender, EventArgs e)
@@ -263,9 +269,11 @@ namespace Library
             {
                 author.Name = authorNewName;
                 author.BirthDate = auhtorNewDate;
+
                 _unitOfWork.Authors.Update(author);
                 _unitOfWork.Save();
                 LoadAuthorsData();
+
                 MessageBox.Show("Author's data is changed.");
                 resetAuthorEditPanel();
                 logger.Log($"Author with name: {authorNewName} editted.", LogLevel.Warning);
@@ -284,7 +292,7 @@ namespace Library
             }
             else
             {
-                var authors = _unitOfWork.Authors.GetAll().Where(a => a.Name.ToLower().Contains(searchText) || a.BirthDate.ToString().Contains(searchText));
+                var authors = _unitOfWork.Authors.GetAllForSearching(searchText);
 
                 if (authors.Any())
                 {
@@ -302,38 +310,39 @@ namespace Library
         {
             LoadBooksData();
             ShowPanel(booksPanel);
+            booksSearchTxt.Text = string.Empty;
         }
 
         private void LoadBooksData()
         {
             booksDataGridView.Rows.Clear();
-            var books = _unitOfWork.Books.GetAllWithAuthor();
+            var books = _unitOfWork.Books.GetBooksExportFormat();
 
             foreach (var book in books)
             {
-                booksDataGridView.Rows.Add(book.Title, book.Genre, book.Author.Name);
+                booksDataGridView.Rows.Add(book.Title, book.Genre, book.Author);
             }
         }
         private void booksAddBtn_Click(object sender, EventArgs e)
         {
             addBookPanel.Show();
-            uploadNewBookCombobox();
+            UploadNewBookCombobox();
             newBookGenreCombobox.SelectedIndex = 0;
             newBookAuthorComboBox.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cancelBtn_Click(object sender, EventArgs e)
         {
-            resetAddBookPanel();
+            ResetAddBookPanel();
         }
-        private void label2_Click(object sender, EventArgs e)
+        private void cancelLabel_Click(object sender, EventArgs e)
         {
-            resetAddBookPanel();
+            ResetAddBookPanel();
         }
 
-        private void uploadNewBookCombobox()
+        private void UploadNewBookCombobox()
         {
-            var authors = _unitOfWork.Authors.GetAll().Select(a => a.Name).ToList();
+            var authors = _unitOfWork.Authors.GetAuthorsName();
 
             newBookAuthorComboBox.DataSource = authors;
 
@@ -342,7 +351,7 @@ namespace Library
             newBookGenreCombobox.DataSource = genres;
         }
 
-        private void resetAddBookPanel()
+        private void ResetAddBookPanel()
         {
             addBookPanel.Hide();
             newBookNameTxt.Text = string.Empty;
@@ -350,7 +359,7 @@ namespace Library
             newBookAuthorComboBox.SelectedIndex = 0;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void bookSaveBtn_Click(object sender, EventArgs e)
         {
             var newBookName = newBookNameTxt.Text;
             if (newBookName == string.Empty)
@@ -359,7 +368,8 @@ namespace Library
                 return;
             }
 
-            var authorId = _unitOfWork.Authors.GetAll().Where(a => a.Name == newBookAuthorComboBox.SelectedValue.ToString()).First().Id;
+            var authorName = newBookAuthorComboBox.SelectedValue.ToString();
+            var authorId = _unitOfWork.Authors.GetAuthorIdByName(authorName);
 
             var newBook = new Book
             {
@@ -378,17 +388,20 @@ namespace Library
             else
             {
                 MessageBox.Show("Book is added.");
+
                 _unitOfWork.Save();
                 LoadBooksData();
-                resetAddBookPanel();
+                ResetAddBookPanel();
+                booksSearchTxt.Text = string.Empty;
+
                 logger.Log($"Book with title: {newBook.Title} added.", LogLevel.Info);
             }
         }
 
-        private void updateEditBookPanel(Book book)
+        private void UpdateEditBookPanel(Book book)
         {
 
-            var authors = _unitOfWork.Authors.GetAll().Select(a => a.Name).ToList();
+            var authors = _unitOfWork.Authors.GetAuthorsName();
 
             editBookAuthorComboBox.DataSource = authors;
 
@@ -406,7 +419,7 @@ namespace Library
             editBookPanel.Show();
         }
 
-        private void deleteBook(Book book)
+        private void DeleteBook(Book book)
         {
             _unitOfWork.Books.Delete(book);
             _unitOfWork.Save();
@@ -418,15 +431,15 @@ namespace Library
         private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var bookTitle = booksDataGridView.CurrentRow.Cells[0].Value as string;
-            var book = _unitOfWork.Books.GetAllWithAuthor().Where(a => a.Title == bookTitle).First();
+            var book = _unitOfWork.Books.GetByTitle(bookTitle);
 
             switch (e.ColumnIndex)
             {
                 case 3:
-                    updateEditBookPanel(book);
+                    UpdateEditBookPanel(book);
                     break;
                 case 4:
-                    deleteBook(book);
+                    DeleteBook(book);
                     break;
             }
         }
@@ -441,7 +454,7 @@ namespace Library
             editBookPanel.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void editBookSave_Click(object sender, EventArgs e)
         {
             var originalTitle = editBookOriginalTitle.Text;
             var originalGenre = editBookOriginalGenre.Text;
@@ -461,14 +474,16 @@ namespace Library
                 MessageBox.Show("No changes.");
                 return;
             }
+
+            var Book = _unitOfWork.Books.GetAll().Where(b => b.Title == originalTitle).First();
+            var author = _unitOfWork.Authors.GetAll().Where(a => a.Name == newAuthor).First();
+
             if (originalTitle != newTitle)
             {
                 bool nameIsOK = _unitOfWork.Books.GetAll().Where(b => b.Title == newTitle).ToList().Count == 0;
+
                 if (nameIsOK)
                 {
-
-                    var Book = _unitOfWork.Books.GetAll().Where(b => b.Title == originalTitle).First();
-                    var author = _unitOfWork.Authors.GetAll().Where(a => a.Name == newAuthor).First();
 
                     Book.Title = newTitle;
                     Book.Genre = newGenre;
@@ -476,9 +491,13 @@ namespace Library
 
                     _unitOfWork.Books.Update(Book);
                     _unitOfWork.Save();
+
                     MessageBox.Show("Book is editted.");
+
                     editBookPanel.Hide();
                     LoadBooksData();
+                    booksSearchTxt.Text = string.Empty;
+
                     logger.Log($"Book with title: {newTitle} is edttted.", LogLevel.Warning);
                     return;
                 }
@@ -490,8 +509,6 @@ namespace Library
             }
             else
             {
-                var Book = _unitOfWork.Books.GetAll().Where(b => b.Title == originalTitle).First();
-                var author = _unitOfWork.Authors.GetAll().Where(a => a.Name == newAuthor).First();
 
                 Book.Genre = newGenre;
                 Book.AuthorId = author.Id;
@@ -517,7 +534,7 @@ namespace Library
             }
             else
             {
-                var books = _unitOfWork.Books.GetAllWithAuthor().Where(b => b.Title.ToLower().Contains(searchText) || b.Genre.ToLower().Contains(searchText) || b.Author.Name.ToLower().Contains(searchText)).ToList();
+                var books = _unitOfWork.Books.GetAllForSearching(searchText);
 
                 if (books.Any())
                 {
@@ -533,12 +550,7 @@ namespace Library
         #region Excel
         private void exportAuthors_Click(object sender, EventArgs e)
         {
-            var authors = _unitOfWork.Authors.GetAllWithBooks().Select(a => new
-            {
-                a.Name,
-                a.BirthDate,
-                a.Books.Count,
-            }).ToList();
+            var authors = _unitOfWork.Authors.GetAuthorsExportFormat();
 
             ExcelHelper.ExportToExcel(authors, "Auhor's Data", "Authors");
             logger.Log("Author's excel file is created", LogLevel.Info);
@@ -546,12 +558,7 @@ namespace Library
 
         private void booksExportBtn_Click(object sender, EventArgs e)
         {
-            var books = _unitOfWork.Books.GetAllWithAuthor().Select(b => new
-            {
-                b.Title,
-                b.Genre,
-                Author = b.Author.Name
-            }).ToList();
+            var books = _unitOfWork.Books.GetBooksExportFormat().ToList();
 
             ExcelHelper.ExportToExcel(books, "Book's data", "Books");
             logger.Log("Book's excel file is created", LogLevel.Info);
@@ -559,32 +566,36 @@ namespace Library
         #endregion
 
         #region Stat's panel
-        private void statBtn_Click(object sender, EventArgs e)
+        private void  statBtn_Click(object sender, EventArgs e)
         {
-            bool canOpen = _unitOfWork.Books.GetAll().Count() > 0;
+            bool canOpen = _unitOfWork.Books.BookIsNotEmpty();
             if (canOpen)
             {
-                ShowPanel(statPanel);
-                loadAuthorsName();
-                CreatePieChart();
-                CreateBarChart();
+                ResetStatPanel();
             }
             else
             {
                 MessageBox.Show("No data to show.");
             }
         }
-
-        private void loadAuthorsName()
+        private void ResetStatPanel()
         {
-            var authorsName = _unitOfWork.Books.GetAllWithAuthor().Select(b => b.Author.Name).Distinct().ToList();
+            LoadAuthorsName();
+            CreatePieChart();
+            CreateBarChart();
+            ShowPanel(statPanel);
+        }
+
+        private void LoadAuthorsName()
+        {
+            var authorsName = _unitOfWork.Authors.GetAuthorsNameWithBooks();
 
             authorsStatCombobox.DataSource = authorsName;
         }
 
         private void CreatePieChart()
         {
-            Random rnd = new Random();
+            Random rnd = new();
 
             ScottPlot.Color GetRandomColor() => new ScottPlot.Color(rnd.Next(50, 256), rnd.Next(50, 256), rnd.Next(50, 256));
             HashSet<ScottPlot.Color> usedColors = [];
@@ -631,9 +642,9 @@ namespace Library
             formsPlot.Refresh();
         }
 
-        private void CreateBarChart()
+        private void  CreateBarChart()
         {
-            var authors = _unitOfWork.Authors.GetAllWithBooks().ToList();
+            var authors = _unitOfWork.Authors.GetAuthorsWithBookCount().ToList();
 
             var formsPlot1 = new FormsPlot
             {
@@ -645,7 +656,7 @@ namespace Library
 
             for (int i = 0; i < authors.Count(); i++)
             {
-                values[i] = authors[i].Books.Count;
+                values[i] = authors[i].BookCount;
                 ticks[i] = new Tick(i, authors[i].Name);
             }
 

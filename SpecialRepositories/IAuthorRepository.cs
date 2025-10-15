@@ -11,8 +11,15 @@ namespace Library.SpecialRepositories
 {
     public interface IAuthorRepository : IRepository<Author>
     {
+        Author GetByIdWithBooks(int id);
+        Author GetByName(string name);
         IEnumerable<Author> GetAllWithBooks();
-        Author? GetByIdWithBooks(int id);
         IEnumerable<AuthorsGenreStat> GetAuthorGenreStatList(string name);
+        IEnumerable<AuhtorBookCount> GetAuthorsWithBookCount();
+        IEnumerable<Author> GetAllForSearching(string searchText);
+        List<string> GetAuthorsName();
+        List<string> GetAuthorsNameWithBooks();
+        List<AuthorExcel> GetAuthorsExportFormat();
+        int GetAuthorIdByName(string name);
     }
 }

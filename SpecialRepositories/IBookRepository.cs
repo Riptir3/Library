@@ -1,4 +1,5 @@
-﻿using Library.Models;
+﻿using Library.DTOs;
+using Library.Models;
 using Library.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,11 @@ namespace Library.SpecialRepositories
     public interface IBookRepository : IRepository<Book>
     {
         IEnumerable<Book> GetAllWithAuthor();
+        IEnumerable<Book> GetAllForSearching(string searchText);
         Book? GetByIdWithAuthor(int id);
+
+        Book? GetByTitle(string title);
+        bool BookIsNotEmpty();
+        IEnumerable<BooksExcel> GetBooksExportFormat();
     }
 }

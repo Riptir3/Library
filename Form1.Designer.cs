@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             HeaderPanel = new Panel();
             label1 = new Label();
             exitLabel = new Label();
@@ -507,20 +507,20 @@
             // 
             authorDataGridView.AllowUserToAddRows = false;
             authorDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(255, 192, 128);
-            authorDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 192, 128);
+            authorDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(authorDataGridView, "authorDataGridView");
             authorDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             authorDataGridView.BackgroundColor = Color.White;
             authorDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = SystemColors.Control;
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            authorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            authorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             authorDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             authorDataGridView.Columns.AddRange(new DataGridViewColumn[] { AuthorName, Date, Books, ChangeBtn, delBtn, showBooks });
             authorDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -528,8 +528,8 @@
             authorDataGridView.Name = "authorDataGridView";
             authorDataGridView.ReadOnly = true;
             authorDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            authorDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            authorDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             authorDataGridView.RowTemplate.ReadOnly = true;
             authorDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             authorDataGridView.ShowEditingIcon = false;
@@ -538,24 +538,24 @@
             // AuthorName
             // 
             AuthorName.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            AuthorName.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            AuthorName.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(AuthorName, "AuthorName");
             AuthorName.Name = "AuthorName";
             AuthorName.ReadOnly = true;
             // 
             // Date
             // 
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Date.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Date.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(Date, "Date");
             Date.Name = "Date";
             Date.ReadOnly = true;
             // 
             // Books
             // 
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Books.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Books.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(Books, "Books");
             Books.Name = "Books";
             Books.ReadOnly = true;
@@ -666,7 +666,7 @@
             button3.ForeColor = SystemColors.ButtonHighlight;
             button3.Name = "button3";
             button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button3.Click += editBookSave_Click;
             // 
             // editBookCaancelBtn
             // 
@@ -780,7 +780,7 @@
             button1.ForeColor = SystemColors.ButtonFace;
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += cancelBtn_Click;
             // 
             // button2
             // 
@@ -789,7 +789,7 @@
             button2.ForeColor = SystemColors.ButtonHighlight;
             button2.Name = "button2";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += bookSaveBtn_Click;
             // 
             // groupBox11
             // 
@@ -830,7 +830,7 @@
             label2.Cursor = Cursors.Hand;
             label2.ForeColor = SystemColors.ControlLightLight;
             label2.Name = "label2";
-            label2.Click += label2_Click;
+            label2.Click += cancelLabel_Click;
             // 
             // booksExportBtn
             // 
@@ -864,20 +864,20 @@
             // 
             booksDataGridView.AllowUserToAddRows = false;
             booksDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = Color.FromArgb(255, 192, 128);
-            booksDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 192, 128);
+            booksDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             resources.ApplyResources(booksDataGridView, "booksDataGridView");
             booksDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             booksDataGridView.BackgroundColor = Color.White;
             booksDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = SystemColors.Control;
-            dataGridViewCellStyle20.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle20.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
-            booksDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            booksDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             booksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             booksDataGridView.Columns.AddRange(new DataGridViewColumn[] { bookTitle, bookGenre, bookAuthor, bookEditBtn, bookDelete });
             booksDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -885,8 +885,8 @@
             booksDataGridView.Name = "booksDataGridView";
             booksDataGridView.ReadOnly = true;
             booksDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            booksDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            booksDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             booksDataGridView.RowTemplate.ReadOnly = true;
             booksDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             booksDataGridView.ShowEditingIcon = false;
@@ -895,24 +895,24 @@
             // bookTitle
             // 
             bookTitle.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            bookTitle.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            bookTitle.DefaultCellStyle = dataGridViewCellStyle9;
             resources.ApplyResources(bookTitle, "bookTitle");
             bookTitle.Name = "bookTitle";
             bookTitle.ReadOnly = true;
             // 
             // bookGenre
             // 
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            bookGenre.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            bookGenre.DefaultCellStyle = dataGridViewCellStyle10;
             resources.ApplyResources(bookGenre, "bookGenre");
             bookGenre.Name = "bookGenre";
             bookGenre.ReadOnly = true;
             // 
             // bookAuthor
             // 
-            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            bookAuthor.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            bookAuthor.DefaultCellStyle = dataGridViewCellStyle11;
             resources.ApplyResources(bookAuthor, "bookAuthor");
             bookAuthor.Name = "bookAuthor";
             bookAuthor.ReadOnly = true;
