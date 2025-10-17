@@ -17,6 +17,7 @@ Egy C#, .NET keretrendszeren alapú, Windows Forms Application-t használó kön
 ## Leírás
 
 Ez a projekt egy C# programozási nyelven megírt Windows Forms Application, amely tartalmaz adatbázis interakciókat(EF core + SQL), loggolást, excel exportálást, illetve statisztikai diagrammok létrehozását.
+Rétegezett architektúrát és konstruktorban történő hivatkozás átadást valósít meg Generikus módszerekkel. 
 A cél, hogy modulárisan lehessen használni különféle .NET alkalmazásokban.
 
 ## Struktúra
@@ -25,7 +26,7 @@ A cél, hogy modulárisan lehessen használni különféle .NET alkalmazásokban
 Library/
 ├── Controllers/ -> Vezérlő osztályok, az adatbázisba való mentést segítik elő. 
 ├── DTOs/ -> Data Transfer Object osztályok, csökkentik az erőforrás igényt.
-├── Data/ -> Adatbázis interakciók Interfacei, illetve osztályai.
+├── Data/ -> Adatbázis interakciók Interfacei, illetve osztályai. 
 ├── DatabaseConfig/ -> Adatbázis konfiguráció.
 ├── Enums/ -> Enumerációk.
 ├── Excel/ -> Excel-kezelő osztály.
@@ -56,15 +57,23 @@ Library/
 - Van lehetőség keresésre, illetve jobb felső ikonnal exportálni tudjuk az állományt excel fileba.
 
 ### Books Panel
-- Ezen az oldalon történik a könyvek kezelése. (teljes CRUD)
+- Ezen az oldalon történik a könyvek kezelése. (teljes CRUD).
 - Úgaynazokat a funnkciókat tartalmazza, mint az `Authors Panel`.
+
+### Statisztika Panel
+- Ezen a Panelen található 2 chart
+  - Egy PieChart, amely a kiválasztott író könyveinek eloszlását mutatja könyv típusonként.
+  - A második egy BarChart, amely az összes író könyveinek a számát viszonyítja egymáshoz.
+<img width="958" height="624" alt="Képernyőkép 2025-10-17 102208" src="https://github.com/user-attachments/assets/d44447ee-4341-4bf0-beae-876b1642ac13" />
 
 ## Követelmények
 
-- .NET Core / .NET 5+ (vagy amely verzióval a projekt építve van)  
-- C#  
-- Adatbázis (pl. SQL Server, SQLite, stb.)  
-- Ha Excel funkciókat használsz: valamilyen Excel kezeléshez szükséges csomag (pl. EPPlus, ClosedXML vagy hasonló)
+- .NET Core / .NET 5+. 
+- C#.
+- EF core.
+- Adatbázis (pl. SQL Server, SQLite, stb.).
+- Excel kezeléshez szükséges csomag (ClosedXML).
+- Chartokhoz ScottPlot.
 
 ## Telepítés
 
@@ -84,16 +93,11 @@ Library/
 
 ## Használat
 
-1. Add referenciaként egy másik .NET vagy ASP.NET projektben  
-2. Konfiguráld az adatbázist (pl. `DbContext`, connection string)  
-3. Használd a modelleket, DTO-kat, repozitóriumokat és vezérlőket az alkalmazásodban  
-4. Ha szükséges, futtasd a migrációkat:
+1. Konfiguráld az adatbázist (pl. `DbContext`, connection string)  
+2. Használd a modelleket, DTO-kat, repozitóriumokat és vezérlőket az alkalmazásodban  
+3. Ha szükséges, futtasd a migrációkat:
     ```bash
     dotnet ef migrations add InitialCreate
     dotnet ef database update
     ```
-
-5. Excel export / import használata, ha beépítetted az Excel logikát
-
-## Projekt struktúra
 
