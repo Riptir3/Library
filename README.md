@@ -10,9 +10,6 @@ Egy C#, .NET keretrendszeren alapú, Windows Forms Application-t használó kön
 - [Követelmények](#követelmények)  
 - [Telepítés](#telepítés)  
 - [Használat](#használat)  
-- [Projekt struktúra](#projekt-struktúra)  
-- [Hozzájárulás](#hozzájárulás)  
-- [Licenc](#licenc)
 
 ## Leírás
 
