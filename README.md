@@ -13,8 +13,8 @@ Egy C#, .NET keretrendszeren alapú, Windows Forms Application-t használó kön
 
 ## Leírás
 
-Ez a projekt egy C# programozási nyelven megírt Windows Forms Application, amely tartalmaz adatbázis interakciókat(EF core + SQL), loggolást, excel exportálást, illetve statisztikai diagrammok létrehozását.
-Rétegezett architektúrát és konstruktorban történő hivatkozás átadást valósít meg Generikus módszerekkel. 
+Ez a projekt egy C# programozási nyelven megírt Windows Forms Application, amely tartalmaz adatbázis interakciókat(EF core + SQL), loggolást, Excel-exportálást, illetve statisztikai diagramok létrehozását.
+Rétegezett architektúrát és konstruktoron keresztüli hivatkozásátadást valósít meg generikus módszerekkel.
 A cél, hogy modulárisan lehessen használni különféle .NET alkalmazásokban.
 
 ## Struktúra
@@ -46,7 +46,7 @@ Library/
 <img width="970" height="633" alt="Képernyőkép 2025-10-17 102031" src="https://github.com/user-attachments/assets/3a09cd09-e072-4d9e-bafc-20607b600280" />
 
 - A 4. oszlop megnyomásakor megnyílik egy új ablak, ahol van lehetőség a kiválasztott író adatainak modósítására.
-- Az 5. oszlopban van lehetőség az író törlésére, a hozzárendelt könyvekkel együtt. (Modelekben be van állítva egy-sok kapcsolat. Amennyiben törlödik azb író, törlödnek a könyvei is).
+- Az 5. oszlopban van lehetőség az író törlésére, a hozzárendelt könyvekkel együtt. (Modelekben be van állítva egy-sok kapcsolat. Amennyiben törlődik az író, törlődnek a könyvei is.).
 - Az útolsó oszlop megnyomásakor, amennyiben az íróhoz tartoznak könyvek, azokan megjeleníti a `Books Panelen`.
 
 <img width="962" height="628" alt="Képernyőkép 2025-10-17 102103" src="https://github.com/user-attachments/assets/39f691ec-1b4d-44bd-90e9-bc919facb175" />
@@ -55,7 +55,7 @@ Library/
 
 ### Books Panel
 - Ezen az oldalon történik a könyvek kezelése. (teljes CRUD).
-- Úgaynazokat a funnkciókat tartalmazza, mint az `Authors Panel`.
+- Ugyanazokat a funkciókat tartalmazza, mint az `Authors Panel`.
 
 ### Statisztika Panel
 - Ezen a Panelen található 2 chart
@@ -65,12 +65,21 @@ Library/
 
 ## Követelmények
 
-- .NET Core / .NET 5+. 
+- .NET Core / .NET 6+. 
 - C#.
 - EF core.
 - Adatbázis (pl. SQL Server, SQLite, stb.).
 - Excel kezeléshez szükséges csomag (ClosedXML).
 - Chartokhoz ScottPlot.
+
+## Technológiák
+
+- **Programozási nyelv:** C#.
+- **Keret:** .NET 6 / Windows Forms.
+- **Adatbázis:** Entity Framework Core + SQL Server.
+- **Diagramok:** ScottPlot.
+- **Excel export:** ClosedXML.
+- **Loggolás:** Egyedi Logger osztály.
 
 ## Telepítés
 
@@ -90,11 +99,17 @@ Library/
 
 ## Használat
 
-1. Konfiguráld az adatbázist (pl. `DbContext`, connection string)  
+1. Konfiguráld az adatbázist (pl. `AppDbContext`, connection string)  
 2. Használd a modelleket, DTO-kat, repozitóriumokat és vezérlőket az alkalmazásodban  
 3. Ha szükséges, futtasd a migrációkat:
     ```bash
     dotnet ef migrations add InitialCreate
     dotnet ef database update
-    ```
+4. Indítsd el az alkalmazást:
+   ```bash
+   dotnet run ```
 
+## Kapcsolat
+
+Fejlesztő: **Riptir3 (Bence)**  
+GitHub: [github.com/Riptir3](https://github.com/Riptir3)
