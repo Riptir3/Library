@@ -5,7 +5,8 @@ Egy C#, .NET keretrendszeren alapú, Windows Forms Application-t használó kön
 ## Tartalomjegyzék
 
 - [Leírás](#leírás)  
-- [Struktúra](#struktúra)  
+- [Struktúra](#struktúra)
+- [Panelek](#panelek)   
 - [Követelmények](#követelmények)  
 - [Telepítés](#telepítés)  
 - [Használat](#használat)  
@@ -15,7 +16,7 @@ Egy C#, .NET keretrendszeren alapú, Windows Forms Application-t használó kön
 
 ## Leírás
 
-Ez a projekt egy C# programozási nyelven megírt Windows Forms Application, amely tartalmaz vezérlőket, adatszerkezeteket (DTO-k), modelleket, migrációkat és Excel-rel kapcsolatos funkcionalitást.  
+Ez a projekt egy C# programozási nyelven megírt Windows Forms Application, amely tartalmaz adatbázis interakciókat(EF core + SQL), loggolást, excel exportálást, illetve statisztikai diagrammok létrehozását.
 A cél, hogy modulárisan lehessen használni különféle .NET alkalmazásokban.
 
 ## Struktúra
@@ -28,6 +29,7 @@ Library/
 ├── DatabaseConfig/ -> Adatbázis konfiguráció.
 ├── Enums/ -> Enumerációk.
 ├── Excel/ -> Excel-kezelő osztály.
+├── Log/ -> Logger osztály.
 ├── Migrations/ -> EF migrációk
 ├── Models/ -> Entitás modellek
 ├── SpecialRepositories/ -> Speciális adattároló / repo osztályok
@@ -35,6 +37,19 @@ Library/
 ├── Library.csproj
 └── Library.sln
 ```
+## Panelek
+
+### Welcome Panel
+- Üdvözlő oldal.
+
+### Authors Panel
+- Ezen az oldalon történik az írók kezelése. (teljes CRUD)
+- Datagridviewban jelennek meg az adatbázisból lekért adatok.
+<img width="970" height="633" alt="Képernyőkép 2025-10-17 102031" src="https://github.com/user-attachments/assets/3a09cd09-e072-4d9e-bafc-20607b600280" />
+- A 4. oszlop megnyomásakor megnyílik egy új ablak, ahol van lehetőség a kiválasztott író adatainak modósítására.
+- Az 5. oszlopban van lehetőség az író törlésére, a hozzárendelt könyvekkel együtt. (Modelekben be van állítva egy-sok kapcsolat. Amennyiben törlödik azb író, törlödnek a könyvei is).
+- Az útolsó oszlop megnyomásakor, amennyiben az íróhoz tartoznak könyvek, azokan megjeleníti a Books Panelen.
+<img width="962" height="628" alt="Képernyőkép 2025-10-17 102103" src="https://github.com/user-attachments/assets/39f691ec-1b4d-44bd-90e9-bc919facb175" />
 
 ## Követelmények
 
