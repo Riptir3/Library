@@ -20,6 +20,7 @@ A cél, hogy modulárisan lehessen használni különféle .NET alkalmazásokban
 
 ## Struktúra
 
+```
 Library/
 ├── Controllers/ -> Vezérlő osztályok, az adatbázisba való mentést segítik elő. 
 ├── DTOs/ -> Data Transfer Object osztályok, csökkentik az erőforrás igényt.
@@ -33,6 +34,7 @@ Library/
 ├── Program.cs
 ├── Library.csproj
 └── Library.sln
+```
 
 ## Követelmények
 
