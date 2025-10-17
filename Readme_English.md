@@ -3,7 +3,7 @@ A **C# .NET-based Windows Forms Application** for managing authors, books, and r
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [Description](#description)  
 - [Structure](#structure)  
@@ -17,7 +17,7 @@ A **C# .NET-based Windows Forms Application** for managing authors, books, and r
 
 ---
 
-## 📝 Description
+## Description
 
 **Library Manager** is a C# project built with **Windows Forms** and **Entity Framework Core**, providing database interactions, logging, Excel export, and data visualization via charts.  
 It implements a **layered architecture** and uses **constructor-based dependency passing** with **generic repository patterns**.  
@@ -25,7 +25,7 @@ The goal is to make the system **modular and reusable** across different .NET ap
 
 ---
 
-## 🧩 Structure
+## Structure
 
 ```
 Library/
