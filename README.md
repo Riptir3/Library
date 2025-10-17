@@ -46,10 +46,18 @@ Library/
 - Ezen az oldalon történik az írók kezelése. (teljes CRUD)
 - Datagridviewban jelennek meg az adatbázisból lekért adatok.
 <img width="970" height="633" alt="Képernyőkép 2025-10-17 102031" src="https://github.com/user-attachments/assets/3a09cd09-e072-4d9e-bafc-20607b600280" />
+
 - A 4. oszlop megnyomásakor megnyílik egy új ablak, ahol van lehetőség a kiválasztott író adatainak modósítására.
 - Az 5. oszlopban van lehetőség az író törlésére, a hozzárendelt könyvekkel együtt. (Modelekben be van állítva egy-sok kapcsolat. Amennyiben törlödik azb író, törlödnek a könyvei is).
-- Az útolsó oszlop megnyomásakor, amennyiben az íróhoz tartoznak könyvek, azokan megjeleníti a Books Panelen.
+- Az útolsó oszlop megnyomásakor, amennyiben az íróhoz tartoznak könyvek, azokan megjeleníti a `Books Panelen`.
+
 <img width="962" height="628" alt="Képernyőkép 2025-10-17 102103" src="https://github.com/user-attachments/assets/39f691ec-1b4d-44bd-90e9-bc919facb175" />
+
+- Van lehetőség keresésre, illetve jobb felső ikonnal exportálni tudjuk az állományt excel fileba.
+
+### Books Panel
+- Ezen az oldalon történik a könyvek kezelése. (teljes CRUD)
+- Úgaynazokat a funnkciókat tartalmazza, mint az `Authors Panel`.
 
 ## Követelmények
 
